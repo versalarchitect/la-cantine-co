@@ -1,0 +1,42 @@
+{
+  "projectType": "next.js",
+  "architecture": {
+    "src/app": "Next.js app router pages",
+    "src/components": "React components",
+    "src/config": "Configuration files and constants",
+    "src/utils": "Utility functions",
+    "src/types": "TypeScript type definitions",
+    "src/lib": "External service integrations (like Stripe)",
+    "public": "Static assets and images"
+  },
+  "conventions": {
+    "components": {
+      "naming": "PascalCase",
+      "location": "src/components"
+    },
+    "pages": {
+      "naming": "page.tsx",
+      "location": "src/app/*"
+    },
+    "styles": {
+      "framework": "tailwindcss",
+      "location": "inline classes"
+    }
+  },
+  "dependencies": {
+    "required": [
+      "next",
+      "react",
+      "react-dom",
+      "typescript",
+      "@stripe/stripe-js",
+      "stripe"
+    ]
+  },
+  "fileExtensions": {
+    "components": ".tsx",
+    "utils": ".ts",
+    "config": ".ts",
+    "types": ".ts"
+  }
+} 

@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--background: 0 0% 100%;
+		--foreground: 240 10% 3.9%;
+	}
+
+	* {
+		@apply antialiased;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		@apply bg-background text-foreground;
+	}
+}
+
+@layer utilities {
+	.text-balance {
+		text-wrap: balance;
+	}
+}
+
+/* Smooth transitions */
+.transition-all {
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom hover effects */
+.hover\:scale-up {
+	@apply transition-transform duration-300;
+}
+.hover\:scale-up:hover {
+	transform: scale(1.02);
+}
+
+/* Image hover effects */
+.image-hover {
+	@apply relative overflow-hidden;
+}
+.image-hover img {
+	@apply transition-transform duration-700;
+}
+.image-hover:hover img {
+	transform: scale(1.05);
+}
+
+/* Text animations */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.animate-fade-in {
+	animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #d4d4d4;
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #a3a3a3;
+}

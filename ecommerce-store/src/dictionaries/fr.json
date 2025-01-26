@@ -1,0 +1,72 @@
+{
+	"navigation": {
+		"home": "Accueil",
+		"boutique": "Boutique",
+		"cart": "Panier",
+		"about": "À Propos",
+		"contact": "Contact"
+	},
+	"common": {
+		"price": "Prix",
+		"addToCart": "Ajouter au Panier",
+		"checkout": "Commander",
+		"total": "Total",
+		"submit": "Soumettre",
+		"send": "Envoyer le Message",
+		"followUs": "Suivez-Nous",
+		"newsletter": "Newsletter",
+		"subscribeNewsletter": "Inscrivez-vous pour recevoir nos nouvelles et offres spéciales",
+		"emailAddress": "Adresse courriel",
+		"subscribe": "S'inscrire",
+		"allRightsReserved": "Tous droits réservés",
+		"freeShipping": "Livraison gratuite pour les commandes de plus de 100$"
+	},
+	"product": {
+		"outOfStock": "Rupture de Stock",
+		"inStock": "En Stock",
+		"description": "Description",
+		"quantity": "Quantité",
+		"addToCart": "Ajouter au Panier",
+		"details": "Détails du Produit",
+		"origin": "Origine",
+		"harvest": "Récolte",
+		"size": "Format",
+		"shipping": "Informations de Livraison",
+		"estimatedDelivery": "Délai Estimé",
+		"carrier": "Transporteur",
+		"tracking": "Suivi"
+	},
+	"contact": {
+		"title": "Contactez-Nous",
+		"address": "Notre Adresse",
+		"contactInfo": "Nos Coordonnées",
+		"hours": "Heures d'Ouverture",
+		"form": {
+			"name": "Nom",
+			"email": "Email",
+			"subject": "Sujet",
+			"message": "Message",
+			"send": "Envoyer le Message"
+		},
+		"schedule": {
+			"monFri": "Lundi – Vendredi",
+			"sat": "Samedi",
+			"sun": "Dimanche",
+			"closed": "Fermé"
+		}
+	},
+	"success": {
+		"title": "Merci pour votre commande!",
+		"message": "Nous avons bien reçu votre commande et allons la traiter dans les plus brefs délais. Vous recevrez un email de confirmation avec les détails de votre commande.",
+		"shipping": {
+			"title": "Informations de Livraison",
+			"estimatedTime": "3-5 jours ouvrables",
+			"carrier": "Colissimo",
+			"tracking": "Par email"
+		},
+		"buttons": {
+			"home": "Retour à l'Accueil",
+			"shop": "Continuer mes Achats"
+		}
+	}
+}
