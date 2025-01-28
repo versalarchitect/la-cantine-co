@@ -1,4 +1,5 @@
 import { Instagram, MapPin, Phone, Clock } from "lucide-react"
+import Link from "next/link"
 
 export function Footer() {
   return (
@@ -65,6 +66,10 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-200">
           <p className="text-sm text-gray-500 text-center">
             © {new Date().getFullYear()} La Cantine & Co. Tous droits réservés.
+            {" · "}
+            <Link href="/privacy-policy" className="hover:text-gray-900 transition-colors">
+              Politique de confidentialité
+            </Link>
           </p>
         </div>
       </div>
