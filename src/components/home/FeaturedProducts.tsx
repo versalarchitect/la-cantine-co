@@ -1,9 +1,18 @@
 import { ProductCard } from "@/components/produit/ProductCard"
-import { getProducts, type Product } from "@/lib/db/products"
+import { getProducts } from "@/lib/db/products"
+import type { Product } from "@/types"
 import { Badge } from "@/components/ui/badge"
 
 export async function FeaturedProducts() {
   const products = await getProducts({ featured: true, limit: 4 })
+
+  // Add required properties to match the Product type
+  const enrichedProducts: Product[] = products.map(p => ({
+    ...p,
+    inventory: 100, // Default inventory
+    category: "Huiles", // Default category
+    imageUrl: p.imageUrl || "/images/products/default.jpg" // Ensure imageUrl is always set
+  }))
 
   return (
     <section className="bg-white py-16">
@@ -22,7 +31,7 @@ export async function FeaturedProducts() {
         </div>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {products.map((product: Product) => (
+          {enrichedProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
