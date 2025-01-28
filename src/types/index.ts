@@ -3,7 +3,10 @@ export interface Product {
   name: string;
   description: string;
   price: number;
-  imageUrl: string;
-  inventory: number;
-  category: string;
+  featured?: boolean;
+  imageUrl?: string;
+  inventory?: number;
+  category?: string;
+  features?: string[];
+  benefits?: string[];
 } 

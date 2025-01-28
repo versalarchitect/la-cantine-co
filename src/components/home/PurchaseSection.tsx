@@ -68,7 +68,7 @@ export function PurchaseSection() {
                        font-display text-xl px-8 py-6 border-4 border-primary/20 
                        hover:border-primary transition-all duration-300"
           >
-            <Link href="/produits/huile-olive-1l" className="flex items-center">
+            <Link href="/huile-olive" className="flex items-center">
               Commander <ShoppingBag className="h-6 w-6 ml-2" />
             </Link>
           </Button>

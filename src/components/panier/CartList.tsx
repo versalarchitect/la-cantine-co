@@ -7,7 +7,7 @@ import { Trash2 } from "lucide-react";
 
 export function CartList() {
   const { items, removeItem } = useCart();
-  const total = items.reduce((acc, item) => acc + item.price, 0);
+  const total = items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
 
   if (items.length === 0) {
     return (
