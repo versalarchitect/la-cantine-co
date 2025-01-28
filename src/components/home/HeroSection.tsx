@@ -40,7 +40,7 @@ export function HeroSection() {
             >
               <h1 className="text-[4.5rem] md:text-[6rem] leading-[0.95] font-bold mb-0 tracking-tight">
                 Goûtez
-                <span className="block font-light text-primary/90">l'Excellence</span>
+                <span className="block font-light text-primary/90">l&apos;Excellence</span>
               </h1>
               <div className="absolute -right-8 top-4 w-16 h-16 border border-foreground/20 -z-10" />
             </motion.div>

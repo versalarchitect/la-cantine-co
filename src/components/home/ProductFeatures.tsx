@@ -3,14 +3,14 @@ import { Check } from "lucide-react"
 const features = [
   {
     id: "quality",
-    title: "Variété Coratina d'Exception",
+    title: "Variété Coratina d&apos;Exception",
     description: "Issue de la prestigieuse variété Coratina des Pouilles, notre huile est reconnue mondialement pour son profil gustatif robuste et sa qualité supérieure",
     icon: "/icons/quality.svg"
   },
   {
     id: "process",
     title: "Extraction à Froid Traditionnelle",
-    description: "Pressée selon les méthodes ancestrales des Pouilles pour préserver les polyphénols et l'intensité aromatique caractéristique de la Coratina",
+    description: "Pressée selon les méthodes ancestrales des Pouilles pour préserver les polyphénols et l&apos;intensité aromatique caractéristique de la Coratina",
     icon: "/icons/process.svg"
   },
   {

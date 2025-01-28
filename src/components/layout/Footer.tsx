@@ -1,5 +1,4 @@
-import { Instagram } from "lucide-react"
-import { MapPin, Phone, Clock } from "lucide-react"
+import { Instagram, MapPin, Phone, Clock } from "lucide-react"
 
 export function Footer() {
   return (
@@ -31,7 +30,7 @@ export function Footer() {
           {/* Hours */}
           <div>
             <h3 className="text-sm font-semibold text-gray-900 tracking-wider uppercase mb-4">
-              Heures d'ouverture
+              Heures d&apos;ouverture
             </h3>
             <ul className="space-y-3 text-base text-gray-600">
               <li className="flex items-center gap-2">

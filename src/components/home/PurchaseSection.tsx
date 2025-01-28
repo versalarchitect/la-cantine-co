@@ -15,7 +15,7 @@ const guarantees = [
     id: "guarantee",
     icon: Shield,
     title: "Qualité Garantie",
-    description: "Satisfaction garantie sur la qualité de notre huile d'olive"
+    description: "Satisfaction garantie sur la qualité de notre huile d&apos;olive"
   },
   {
     id: "payment",
