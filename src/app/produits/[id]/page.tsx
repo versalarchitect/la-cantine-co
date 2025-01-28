@@ -64,12 +64,6 @@ function Breadcrumbs({ product }: { product: { name: string, category?: string }
       {
         '@type': 'ListItem',
         position: 2,
-        name: product.category || 'Produits',
-        item: 'https://lacantine.co/produits'
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
         name: product.name,
       }
     ]
@@ -81,10 +75,6 @@ function Breadcrumbs({ product }: { product: { name: string, category?: string }
       <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-6">
         <Link href="/" className="hover:text-foreground transition-colors">
           Accueil
-        </Link>
-        <ChevronRight className="h-4 w-4" />
-        <Link href="/produits" className="hover:text-foreground transition-colors">
-          {product.category || 'Produits'}
         </Link>
         <ChevronRight className="h-4 w-4" />
         <span className="text-foreground">{product.name}</span>
