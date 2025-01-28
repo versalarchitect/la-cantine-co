@@ -5,8 +5,12 @@ import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
 import { JsonLd } from "@/components/JsonLd"
 
+type Props = {
+  params: { id: string }
+}
+
 export async function generateMetadata(
-  { params }: { params: { id: string } }
+  { params }: Props
 ): Promise<Metadata> {
   const product = await getProductById(params.id)
   
@@ -45,7 +49,7 @@ export async function generateMetadata(
       images: [product.imageUrl || '/images/products/default.jpg'],
     },
     alternates: {
-      canonical: `https://lacantine.co/produits/${params.id}`,
+      canonical: `https://lacantine.co/produits/${product.id}`,
     },
   }
 }
@@ -83,8 +87,7 @@ function Breadcrumbs({ product }: { product: { name: string, category?: string }
   )
 }
 
-// @ts-expect-error -- TODO: Fix Next.js page props type issue
-async function ProductPage({ params }: { params: { id: string } }) {
+export default async function ProductPage({ params }: Props) {
   const product = await getProductById(params.id)
   
   if (!product) {
@@ -133,12 +136,10 @@ async function ProductPage({ params }: { params: { id: string } }) {
         <div className="container max-w-[1400px] mx-auto px-6 py-12 sm:px-8 lg:px-12">
           <Breadcrumbs product={product} />
           <div className="bg-card rounded-lg">
-            <ProductDetails productId={params.id} />
+            <ProductDetails productId={product.id} />
           </div>
         </div>
       </main>
     </>
   )
-}
-
-export default ProductPage 
+} 
