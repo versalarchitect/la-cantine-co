@@ -3,8 +3,15 @@ import Stripe from 'stripe';
 import { headers } from 'next/headers';
 
 if (!process.env.STRIPE_SECRET_KEY) {
+  console.error('STRIPE_SECRET_KEY is missing from environment variables');
   throw new Error('STRIPE_SECRET_KEY is not set');
 }
+
+// Add logging to check the key format (safely)
+console.log('Stripe key format check:', {
+  keyLength: process.env.STRIPE_SECRET_KEY.length,
+  keyPrefix: process.env.STRIPE_SECRET_KEY.substring(0, 7)
+});
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
   apiVersion: '2024-12-18.acacia',

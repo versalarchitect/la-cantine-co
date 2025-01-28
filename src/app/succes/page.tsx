@@ -20,12 +20,12 @@ export default function SuccessPage() {
             Nous vous avons envoyé un e-mail de confirmation avec les détails de votre commande.
           </p>
           <p className="text-gray-600">
-            Si vous avez des questions, n'hésitez pas à contacter notre équipe de support.
+            Si vous avez des questions, n&apos;hésitez pas à contacter notre équipe de support.
           </p>
         </div>
         <div className="mt-8">
           <Link href="/">
-            <Button size="lg">Retour à l'accueil</Button>
+            <Button size="lg">Retour à l&apos;accueil</Button>
           </Link>
         </div>
       </div>

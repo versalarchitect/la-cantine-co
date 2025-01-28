@@ -147,7 +147,7 @@ export function FAQ() {
               <div className="absolute -right-4 top-2 w-8 h-8 border border-foreground/20 -z-10" />
             </motion.div>
             <p className="max-w-2xl text-lg text-foreground/70 font-light">
-              Tout ce que vous devez savoir sur notre huile d'olive premium des Pouilles
+              Tout ce que vous devez savoir sur notre huile d&apos;olive premium des Pouilles
             </p>
           </div>
 

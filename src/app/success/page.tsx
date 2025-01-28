@@ -6,7 +6,7 @@ export default function Success() {
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-4">Thank You for Your Purchase!</h1>
         <p className="text-gray-600 mb-8">
-          We'll send you an email with your order details shortly.
+          We&apos;ll send you an email with your order details shortly.
         </p>
         <Link
           href="/"

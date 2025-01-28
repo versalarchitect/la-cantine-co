@@ -10,14 +10,14 @@ export async function FeaturedProducts() {
       <div className="container mx-auto">
         <div className="mb-10 text-center">
           <Badge variant="secondary" className="mb-4">
-            Produits d'Exception
+            Produits d&apos;Exception
           </Badge>
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900">
-            L'Excellence de l'Huile Coratina
+            L&apos;Excellence de l&apos;Huile Coratina
           </h2>
           <p className="mx-auto max-w-2xl text-gray-600">
-            Découvrez notre huile d'olive extra vierge Coratina, un trésor des Pouilles reconnu pour son intensité aromatique 
-            et sa richesse exceptionnelle en antioxydants. Une expérience gustative unique, fruit d'un savoir-faire ancestral.
+            Découvrez notre huile d&apos;olive extra vierge Coratina, un trésor des Pouilles reconnu pour son intensité aromatique 
+            et sa richesse exceptionnelle en antioxydants. Une expérience gustative unique, fruit d&apos;un savoir-faire ancestral.
           </p>
         </div>
 

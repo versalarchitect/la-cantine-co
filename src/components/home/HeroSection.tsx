@@ -1,7 +1,6 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ShoppingBag } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
@@ -52,8 +51,8 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              Notre huile d'olive est limpide, d'un beau jaune aux reflets verts, avec un parfum fruité 
-              et des notes d'amande.
+              Notre huile d&apos;olive est limpide, d&apos;un beau jaune aux reflets verts, avec un parfum fruité 
+              et des notes d&apos;amande.
             </motion.p>
 
             <motion.div 
