@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Lora, Inter, Cormorant } from "next/font/google";
 import "./globals.css";
 import { MainLayout } from "@/components/layout/MainLayout";
@@ -48,6 +48,15 @@ const organizationJsonLd = {
   }
 };
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  minimumScale: 1,
+  themeColor: '#4A5D4F',
+  colorScheme: 'light'
+};
+
 export const metadata: Metadata = {
   title: {
     default: "La Cantine & Co | Huile d'Olive Premium des Pouilles",
@@ -72,7 +81,7 @@ export const metadata: Metadata = {
     description: "Découvrez notre huile d'olive exceptionnelle pressée à froid dans les Pouilles, Italie. Une acidité moyenne de 0,25 pour un équilibre parfait de saveurs.",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/images/oil.jpeg",
         width: 1200,
         height: 630,
         alt: "La Cantine & Co - Huile d'Olive Premium"
@@ -83,7 +92,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "La Cantine & Co | Huile d'Olive Premium des Pouilles",
     description: "Découvrez notre huile d'olive exceptionnelle pressée à froid dans les Pouilles, Italie.",
-    images: ["/images/og-image.jpg"],
+    images: ["/images/oil.jpeg"],
     creator: "@lacantine",
     site: "@lacantine",
   },
@@ -99,22 +108,14 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
-    other: {
-      rel: 'mask-icon',
-      url: '/safari-pinned-tab.svg',
-      color: '#4A5D4F'
-    }
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' }
+    ],
+    apple: { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
   },
   manifest: '/site.webmanifest',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-    minimumScale: 1,
-  },
   verification: {
     google: 'your-google-site-verification',
     other: {
@@ -124,10 +125,8 @@ export const metadata: Metadata = {
   category: 'ecommerce',
   classification: 'business',
   referrer: 'origin-when-cross-origin',
-  colorScheme: 'light',
   applicationName: 'La Cantine & Co',
   generator: 'Next.js',
-  themeColor: '#4A5D4F',
 };
 
 export default function RootLayout({
