@@ -6,7 +6,7 @@ import type { Product } from "@/types"
 import { useCart } from "@/hooks/use-cart"
 import { Button } from "@/components/ui/button"
 import { formatPrice } from "@/lib/utils"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 
 interface CartItemProps {
   item: Product & { quantity: number }

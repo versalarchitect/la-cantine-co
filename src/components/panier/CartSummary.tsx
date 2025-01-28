@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { useCart } from "@/hooks/use-cart"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
 import { formatPrice } from "@/lib/utils"
 import { Loader2 } from "lucide-react"
 

@@ -4,7 +4,6 @@ import { useState } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { ShoppingBag, Minus, Plus, Check } from "lucide-react"
 import { useCart } from "@/hooks/use-cart"
 
