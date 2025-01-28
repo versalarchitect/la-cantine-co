@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og"
 
 export const runtime = "edge"
-export const alt = "La Cantine & Co - Huile d'Olive Premium des Pouilles"
+export const alt = "La Cantine & Co - Huile d&apos;Olive Premium des Pouilles"
 export const size = {
   width: 1200,
   height: 630,
@@ -53,7 +53,7 @@ export default async function Image() {
               maxWidth: "800px",
             }}
           >
-            Huile d'Olive Premium des Pouilles
+            Huile d&apos;Olive Premium des Pouilles
           </p>
         </div>
       </div>
