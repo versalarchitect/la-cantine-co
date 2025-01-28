@@ -1,44 +1,35 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ShoppingBag, Minus, Plus, Check } from "lucide-react"
 import { useCart } from "@/hooks/use-cart"
+import { getProductById } from "@/lib/db/products"
+import type { Product } from "@/lib/db/products"
 
-const product = {
-  id: "olive-oil-1l",
-  name: "Huile d'Olive Extra Vierge",
-  description: "Notre huile d'olive extra vierge est pressée à froid dans les Pouilles, en Italie. Cette huile d'exception est caractérisée par son goût fruité et sa douceur remarquable, idéale pour sublimer vos plats. Directement importée de la région des Pouilles, elle est produite selon des méthodes traditionnelles pour préserver toute sa qualité.",
-  price: 2990, // $29.90
-  volume: "750ml",
-  origin: "Pouilles, Italie",
-  features: [
-    "Pressée à froid",
-    "Récolte 2023/24",
-    "Acidité < 0.3%",
-    "Non filtrée",
-    "100% Italienne",
-    "Production artisanale"
-  ],
-  benefits: [
-    "Riche en antioxydants",
-    "Source d'oméga-3 et 9",
-    "Sans additifs",
-    "Conservation optimale",
-    "Goût authentique",
-    "Qualité premium"
-  ],
-  imageUrl: "/images/products/olive-oil.jpg",
-  inventory: 100,
-  category: "Huiles"
+interface ProductDetailsProps {
+  productId: string;
 }
 
-export function ProductDetails() {
+export function ProductDetails({ productId }: ProductDetailsProps) {
   const [quantity, setQuantity] = useState(1)
   const [addedToCart, setAddedToCart] = useState(false)
+  const [product, setProduct] = useState<Product | null>(null)
   const { addItem } = useCart()
+
+  useEffect(() => {
+    const loadProduct = async () => {
+      const productData = await getProductById(productId)
+      setProduct(productData)
+    }
+    loadProduct()
+  }, [productId])
+
+  if (!product) {
+    return <div>Loading...</div>
+  }
 
   const handleQuantityChange = (delta: number) => {
     const newQuantity = quantity + delta
@@ -61,7 +52,7 @@ export function ProductDetails() {
       <Card className="overflow-hidden bg-card border border-border">
         <div className="relative aspect-square">
           <Image
-            src="/bouteille.jpg"
+            src={product.imageUrl || "/bouteille.jpg"}
             alt={product.name}
             fill
             className="object-contain p-4 transition-transform duration-300 hover:scale-102"
@@ -73,7 +64,6 @@ export function ProductDetails() {
       <div className="space-y-8 font-body">
         <div className="space-y-4">
           <h1 className="font-display text-4xl font-bold text-foreground">{product.name}</h1>
-          <p className="text-lg font-medium text-muted-foreground">{product.volume} • {product.origin}</p>
           <p className="text-base leading-relaxed text-foreground border-l-2 border-primary/20 pl-4">{product.description}</p>
         </div>
 
@@ -113,30 +103,32 @@ export function ProductDetails() {
           </Button>
         </div>
 
-        <div className="grid grid-cols-2 gap-8 pt-4">
-          <div className="space-y-4">
-            <h2 className="font-display text-xl font-semibold text-foreground border-b border-border pb-2">Features</h2>
-            <ul className="space-y-2">
-              {product.features.map((feature) => (
-                <li key={feature} className="flex items-center gap-2 text-muted-foreground">
-                  <Check className="h-4 w-4 text-primary/70" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
+        {product.features && (
+          <div className="grid grid-cols-2 gap-8 pt-4">
+            <div className="space-y-4">
+              <h2 className="font-display text-xl font-semibold text-foreground border-b border-border pb-2">Features</h2>
+              <ul className="space-y-2">
+                {product.features.map((feature) => (
+                  <li key={feature} className="flex items-center gap-2 text-muted-foreground">
+                    <Check className="h-4 w-4 text-primary/70" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="space-y-4">
+              <h2 className="font-display text-xl font-semibold text-foreground border-b border-border pb-2">Benefits</h2>
+              <ul className="space-y-2">
+                {product.benefits?.map((benefit) => (
+                  <li key={benefit} className="flex items-center gap-2 text-muted-foreground">
+                    <Check className="h-4 w-4 text-primary/70" />
+                    <span>{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <div className="space-y-4">
-            <h2 className="font-display text-xl font-semibold text-foreground border-b border-border pb-2">Benefits</h2>
-            <ul className="space-y-2">
-              {product.benefits.map((benefit) => (
-                <li key={benefit} className="flex items-center gap-2 text-muted-foreground">
-                  <Check className="h-4 w-4 text-primary/70" />
-                  <span>{benefit}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   )

@@ -1,6 +1,21 @@
 import { Button } from "@/components/ui/button"
 import { CheckCircle } from "lucide-react"
 import Link from "next/link"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Commande Confirmée | La Cantine & Co",
+  description: "Merci pour votre achat. Votre commande d'huile d'olive premium a été confirmée et sera expédiée sous peu.",
+  robots: {
+    index: false,
+    follow: false,
+  },
+  openGraph: {
+    title: "Commande Confirmée | La Cantine & Co",
+    description: "Merci pour votre achat. Votre commande d'huile d'olive premium a été confirmée et sera expédiée sous peu.",
+    type: "website",
+  },
+}
 
 export default function SuccessPage() {
   return (
@@ -31,9 +46,4 @@ export default function SuccessPage() {
       </div>
     </main>
   )
-}
-
-export const metadata = {
-  title: "Commande Confirmée | Huile d'Olive Premium",
-  description: "Merci pour votre achat. Votre huile d'olive premium est en route !",
 } 
