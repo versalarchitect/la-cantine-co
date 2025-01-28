@@ -15,7 +15,6 @@ const QuantityInput = React.forwardRef<HTMLInputElement, QuantityInputProps>(
   (
     {
       className,
-      type,
       min = 1,
       max = 99,
       step = 1,

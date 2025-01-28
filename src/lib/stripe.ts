@@ -1,4 +1,4 @@
-import { loadStripe, Stripe as StripeClient } from '@stripe/stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 import Stripe from 'stripe';
 
 if (!process.env.STRIPE_SECRET_KEY) {
