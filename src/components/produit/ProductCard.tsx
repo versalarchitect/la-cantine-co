@@ -23,7 +23,7 @@ export function ProductCard({ product }: ProductCardProps) {
     setLoading(true)
     // Simulate network delay for better UX
     await new Promise(resolve => setTimeout(resolve, 500))
-    addItem(product)
+    addItem({ product, quantity: 1 })
     setLoading(false)
   }
 
@@ -41,7 +41,7 @@ export function ProductCard({ product }: ProductCardProps) {
           transition={{ duration: 0.3 }}
         >
           <Image
-            src={product.imageUrl}
+            src={product.imageUrl || "/bouteille.jpg"}
             alt={product.name}
             fill
             className="object-cover"
@@ -93,7 +93,7 @@ export function ProductCard({ product }: ProductCardProps) {
               </Button>
             </motion.div>
           </motion.div>
-          {product.inventory <= 5 && product.inventory > 0 && (
+          {(product.inventory ?? 0) <= 5 && (product.inventory ?? 0) > 0 && (
             <motion.p 
               className="mt-2 text-sm text-red-500"
               initial={{ opacity: 0 }}
@@ -103,7 +103,7 @@ export function ProductCard({ product }: ProductCardProps) {
               Only {product.inventory} left in stock!
             </motion.p>
           )}
-          {product.inventory === 0 && (
+          {(product.inventory ?? 0) === 0 && (
             <motion.p 
               className="mt-2 text-sm text-red-500"
               initial={{ opacity: 0 }}

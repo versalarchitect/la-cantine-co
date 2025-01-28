@@ -15,7 +15,7 @@ import { useCart } from "@/hooks/use-cart"
 
 export function CartSheet() {
   const { items } = useCart()
-  const itemCount = items.length
+  const itemCount = items.reduce((total, item) => total + item.quantity, 0)
 
   return (
     <Sheet>
@@ -36,7 +36,7 @@ export function CartSheet() {
       <SheetContent className="flex w-full flex-col pr-0 sm:max-w-lg">
         <SheetHeader className="px-6 py-4 border-b">
           <SheetTitle className="text-xl font-medium">
-            Panier ({itemCount})
+            Panier ({itemCount} {itemCount === 1 ? 'article' : 'articles'})
           </SheetTitle>
         </SheetHeader>
         <div className="flex flex-1 flex-col overflow-hidden">

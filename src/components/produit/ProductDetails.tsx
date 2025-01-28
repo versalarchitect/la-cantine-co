@@ -48,20 +48,20 @@ export function ProductDetails({ productId }: ProductDetailsProps) {
   }
 
   const handleAddToCart = () => {
-    addItem(product)
+    addItem({ product, quantity })
     setAddedToCart(true)
     setTimeout(() => setAddedToCart(false), 2000)
   }
 
   return (
     <div className="grid gap-8 lg:gap-16 lg:grid-cols-2">
-      <Card className="overflow-hidden bg-card border border-border/40 hover:border-border/80 transition-colors">
+      <Card className="overflow-hidden bg-card border-none transition-colors">
         <div className="relative aspect-square group">
           <Image
             src={product.imageUrl || "/bouteille.jpg"}
             alt={product.name}
             fill
-            className="object-contain p-4 transition-all duration-300 group-hover:scale-105"
+            className="object-contain rounded-md p-4 transition-all duration-300 group-hover:scale-105"
             priority
             sizes="(max-width: 768px) 100vw, 50vw"
           />
