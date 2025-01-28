@@ -35,10 +35,10 @@ export function PurchaseSection() {
       <div className="container mx-auto relative">
         <div className="mb-12 text-left border-l-8 border-primary pl-4">
           <h2 className="mb-4 text-5xl font-bold tracking-tight text-foreground font-display uppercase">
-            Huile d'Olive
+            Huile d&apos;Olive
           </h2>
           <p className="max-w-2xl text-foreground/80 font-body text-lg border-t-2 border-primary/20 pt-4 mt-4">
-            Une huile d'olive exceptionnelle, pressée à froid dans les Pouilles, 
+            Une huile d&apos;olive exceptionnelle, pressée à froid dans les Pouilles, 
             maintenant disponible à Longueuil et ses environs.
           </p>
         </div>

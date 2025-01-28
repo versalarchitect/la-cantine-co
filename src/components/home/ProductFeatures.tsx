@@ -1,5 +1,4 @@
 import { Check } from "lucide-react"
-import Image from "next/image"
 
 const features = [
   {
@@ -51,27 +50,27 @@ export function ProductFeatures() {
               Coratina
             </h2>
             <h2 className="font-serif text-5xl font-bold tracking-tight text-gray-900 relative">
-              L'Excellence de<br />l'Artisanat Italien
+              L&apos;Excellence de<br />l&apos;Artisanat Italien
             </h2>
           </div>
           <p className="mt-8 text-lg text-gray-600 border-l border-primary/60 pl-6">
-            Chaque goutte de notre huile d'olive raconte une histoire de tradition, d'expertise et du riche terroir des Pouilles.
+            Chaque goutte de notre huile d&apos;olive raconte une histoire de tradition, d&apos;expertise et du riche terroir des Pouilles.
           </p>
         </div>
 
         <div className="mb-32 grid grid-cols-1 gap-12 md:grid-cols-2 relative">
-          {features.map((feature, index) => (
+          {features.map((feature) => (
             <div
               key={feature.id}
               className="group relative"
               style={{
-                transform: index % 2 === 0 ? 'translateY(-20px)' : 'translateY(20px)'
+                transform: feature.id === "quality" ? 'translateY(-20px)' : feature.id === "health" ? 'translateY(20px)' : 'translateY(0)'
               }}
             >
               <div className="absolute inset-0 bg-primary/[0.03] rotate-1 transform transition-transform group-hover:rotate-2" />
               <div className="relative bg-white p-8 border border-gray-300/80 hover:-translate-y-1 transition-all duration-300 group-hover:border-primary/40 group-hover:shadow-[0_0_0_1px_rgba(0,0,0,0.05)]">
                 <span className="absolute -top-6 right-4 font-mono text-5xl font-bold text-primary/10">
-                  0{index + 1}
+                  0{features.indexOf(feature) + 1}
                 </span>
                 <h3 className="mb-3 text-xl font-bold text-gray-900 font-mono uppercase">
                   {feature.title}

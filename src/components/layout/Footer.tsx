@@ -1,5 +1,5 @@
-import Link from "next/link"
-import { Instagram, MapPin, Phone, Clock } from "lucide-react"
+import { Instagram } from "lucide-react"
+import { MapPin, Phone, Clock } from "lucide-react"
 
 export function Footer() {
   return (

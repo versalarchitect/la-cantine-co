@@ -39,7 +39,7 @@ export function SocialProof() {
             Ce Que Nos Clients Disent
           </h2>
           <p className="max-w-2xl border-l-4 border-stone-400 pl-4 font-mono text-stone-600">
-            Découvrez pourquoi nos clients adorent notre huile d'olive premium des Pouilles.
+            Découvrez pourquoi nos clients adorent notre huile d&apos;olive premium des Pouilles.
           </p>
         </div>
 

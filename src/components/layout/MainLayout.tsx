@@ -5,6 +5,10 @@ import { Navbar } from "./Navbar"
 import { PageTransition } from "./PageTransition"
 import { Footer } from "./Footer"
 import { motion, AnimatePresence } from "framer-motion"
+import { cn } from "@/lib/utils"
+import { Toaster } from "sonner"
+import { CartProvider } from "@/hooks/useCart"
+import { Header } from "./Header"
 
 interface MainLayoutProps {
   children: ReactNode
