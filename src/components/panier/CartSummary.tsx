@@ -10,15 +10,19 @@ export function CartSummary() {
   const { items } = useCart()
   const [loading, setLoading] = useState(false)
   
-  // Calculate subtotal (in cents)
-  const subtotal = items.reduce((acc, item) => acc + item.price * item.quantity, 0)
+  // Calculate subtotal - properly multiply price by quantity for each item
+  const subtotal = items.reduce((acc, item) => {
+    // Ensure price is treated consistently (stored in cents)
+    const itemPrice = item.price
+    return acc + (itemPrice * item.quantity)
+  }, 0)
   
-  // Calculate shipping (in cents) - Free shipping for orders over $50 (5000 cents)
-  const SHIPPING_COST = 500 // $5.00 in cents
-  const FREE_SHIPPING_THRESHOLD = 5000 // $50.00 in cents
+  // Calculate shipping - Free shipping for orders over $50 CAD
+  const SHIPPING_COST = 0 // Free shipping
+  const FREE_SHIPPING_THRESHOLD = 5000 // $50 CAD in cents
   const shipping = subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_COST
   
-  // Calculate grand total (in cents)
+  // Calculate grand total
   const grandTotal = subtotal + shipping
 
   const onCheckout = async () => {
@@ -26,11 +30,11 @@ export function CartSummary() {
       setLoading(true)
       
       const checkoutItems = items.map(item => ({
-        name: "Huile d'Olive Extra Vierge",
-        description: "Huile d'olive extra vierge de première qualité",
+        name: item.name,
+        description: item.description || "Huile d'olive extra vierge de première qualité",
         price: item.price,
         quantity: item.quantity,
-        imageUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/bouteille.jpg`
+        imageUrl: item.imageUrl || `${process.env.NEXT_PUBLIC_BASE_URL}/bouteille.jpg`
       }))
 
       const response = await fetch('/api/checkout', {
@@ -63,16 +67,16 @@ export function CartSummary() {
       <div className="space-y-3">
         <div className="flex justify-between text-base">
           <span className="text-muted-foreground">Sous-total</span>
-          <span className="font-medium">{formatPrice(subtotal / 100)}</span>
+          <span className="font-medium">{formatPrice(subtotal)}</span>
         </div>
         <div className="flex justify-between text-base">
           <span className="text-muted-foreground">Livraison</span>
-          <span className="font-medium">{formatPrice(shipping / 100)}</span>
+          <span className="font-medium">{formatPrice(shipping)}</span>
         </div>
         <div className="border-t pt-3">
           <div className="flex justify-between">
             <span className="text-base font-medium">Total</span>
-            <span className="text-base font-semibold">{formatPrice(grandTotal / 100)}</span>
+            <span className="text-base font-semibold">{formatPrice(grandTotal)}</span>
           </div>
         </div>
       </div>
