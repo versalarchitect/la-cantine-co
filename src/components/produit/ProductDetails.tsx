@@ -37,7 +37,6 @@ const product = {
 
 export function ProductDetails() {
   const [quantity, setQuantity] = useState(1)
-  const [loading, setLoading] = useState(false)
   const [addedToCart, setAddedToCart] = useState(false)
   const { addItem } = useCart()
 
@@ -55,44 +54,6 @@ export function ProductDetails() {
     }
     setAddedToCart(true)
     setTimeout(() => setAddedToCart(false), 2000) // Reset after 2 seconds
-  }
-
-  const handleCheckout = async () => {
-    try {
-      setLoading(true)
-      const response = await fetch("/api/checkout", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          items: [
-            {
-              ...product,
-              quantity,
-            }
-          ]
-        })
-      })
-
-      if (!response.ok) {
-        const errorText = await response.text()
-        console.error('Response status:', response.status)
-        console.error('Response text:', errorText)
-        throw new Error(`Network response was not ok: ${response.status} - ${errorText}`)
-      }
-
-      const { url } = await response.json()
-      if (!url) {
-        throw new Error('No checkout URL received from the server')
-      }
-      window.location.href = url
-    } catch (err) {
-      console.error("Checkout Error:", err)
-      // You might want to show an error message to the user here
-    } finally {
-      setLoading(false)
-    }
   }
 
   return (
@@ -143,17 +104,12 @@ export function ProductDetails() {
 
           <Button
             onClick={handleAddToCart}
-            disabled={loading}
             className="w-full h-14 text-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
           >
-            {loading ? (
-              "Processing..."
-            ) : (
-              <span className="flex items-center justify-center gap-2">
-                <ShoppingBag className="h-5 w-5" />
-                {addedToCart ? "Added to Cart" : "Add to Cart"}
-              </span>
-            )}
+            <span className="flex items-center justify-center gap-2">
+              <ShoppingBag className="h-5 w-5" />
+              {addedToCart ? "Added to Cart" : "Add to Cart"}
+            </span>
           </Button>
         </div>
 

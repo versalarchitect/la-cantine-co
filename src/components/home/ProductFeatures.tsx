@@ -89,7 +89,7 @@ export function ProductFeatures() {
               <div className="absolute h-px w-24 bg-primary/60 bottom-0 left-0" />
             </h3>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {benefits.map((benefit, index) => (
+              {benefits.map((benefit) => (
                 <div 
                   key={benefit} 
                   className="flex items-center gap-3 group"
