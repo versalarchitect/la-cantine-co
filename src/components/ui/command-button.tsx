@@ -9,16 +9,22 @@ interface CommandButtonProps extends Omit<ButtonProps, 'asChild'> {
   className?: string
 }
 
-export function CommandButton({ className, ...props }: CommandButtonProps) {
-  const buttonContent = (
-    <Button 
-      size="lg" 
-      className={cn("gap-2 hover:translate-y-[-1px] transition-transform", className)} 
+export function CommandButton({ className, href = "/huile-olive", ...props }: CommandButtonProps) {
+  return (
+    <Button
+      asChild
+      size="lg"
+      className={cn(
+        "h-12 gap-2 bg-primary hover:bg-primary/90 text-primary-foreground",
+        "font-display text-base px-6 border-2 border-primary/20",
+        "hover:border-primary transition-all duration-300",
+        className
+      )}
       {...props}
     >
-      Commander <ShoppingBag className="h-4 w-4" />
+      <Link href={href} className="flex items-center">
+        Commander <ShoppingBag className="h-5 w-5 ml-2" />
+      </Link>
     </Button>
   )
-
-  return <Link href="/produits/huile-olive-1l">{buttonContent}</Link>
 } 
