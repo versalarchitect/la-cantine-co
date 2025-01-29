@@ -47,7 +47,7 @@ export function PurchaseSection() {
           {guarantees.map((guarantee) => (
             <div 
               key={guarantee.id} 
-              className="flex flex-col items-start p-6 bg-white hover:bg-primary/10 
+              className="flex flex-col items-start p-6 bg-background hover:bg-primary/10 
                          transition-colors duration-300 transform hover:-translate-y-1
                          border border-stone-300 hover:border-primary/40"
             >

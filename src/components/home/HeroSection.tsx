@@ -2,9 +2,9 @@
 
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
-import { motion } from "framer-motion"
 import { CommandButton } from "@/components/ui/command-button"
 import { LearnMoreButton } from "@/components/ui/learn-more-button"
+import { ScrollAnimation } from "@/components/ui/scroll-animation"
 
 export function HeroSection() {
   return (
@@ -20,69 +20,47 @@ export function HeroSection() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 h-full items-center">
           {/* Text Content */}
           <div className="md:col-span-7 relative">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="mb-8"
-            >
+            <ScrollAnimation animation="fade" delay={0.2}>
               <Badge variant="outline" className="text-xs tracking-[0.2em] px-4 py-2 border rounded-none bg-background/50">
                 ENGAGEMENT · QUALITÉ · PASSION
               </Badge>
-            </motion.div>
+            </ScrollAnimation>
 
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
-              className="relative"
-            >
+            <ScrollAnimation animation="slide" delay={0.4} className="relative mt-8">
               <h1 className="text-[4.5rem] md:text-[6rem] leading-[0.95] font-bold mb-0 tracking-tight">
                 Goûtez
                 <span className="block font-light text-primary/90">l&apos;Excellence</span>
               </h1>
               <div className="absolute -right-8 top-4 w-16 h-16 border border-foreground/20 -z-10" />
-            </motion.div>
+            </ScrollAnimation>
 
-            <motion.p
-              className="text-xl md:text-2xl mt-10 mb-10 max-w-xl font-light text-foreground/80"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              Notre huile d&apos;olive est limpide, d&apos;un beau jaune aux reflets verts, avec un parfum fruité
-              et des notes d&apos;amande.
-            </motion.p>
+            <ScrollAnimation animation="fade" delay={0.6}>
+              <p className="mt-6 text-lg text-foreground/80">
+                Notre huile d&apos;olive est limpide, d&apos;un beau jaune aux reflets verts, avec un parfum fruité
+                et des notes d&apos;amande.
+              </p>
+            </ScrollAnimation>
 
-            <motion.div
-              className="mb-10 pl-6 border-l border-primary/30"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-            >
-              <div className="text-lg font-medium">Qualité Premium</div>
-              <div className="text-sm text-foreground/60">Pressée à froid · Moulin « Panorama » · Pieralisi</div>
-            </motion.div>
+            <ScrollAnimation animation="slide" delay={0.8}>
+              <div className="mt-8 mb-10 pl-6 border-l border-primary/30">
+                <div className="text-lg font-medium">Qualité Premium</div>
+                <div className="text-sm text-foreground/60">Pressée à froid · Moulin « Panorama » · Pieralisi</div>
+              </div>
+            </ScrollAnimation>
 
-            <motion.div
-              className="flex gap-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-            >
-              <CommandButton
-                className="h-12 px-6 text-base"
-              />
-              <LearnMoreButton href="/huile-olive" />
-            </motion.div>
+            <ScrollAnimation animation="scale" delay={1}>
+              <div className="flex gap-6">
+                <CommandButton className="h-12 px-6 text-base" />
+                <LearnMoreButton href="/huile-olive" />
+              </div>
+            </ScrollAnimation>
           </div>
 
           {/* Image Section */}
-          <motion.div
+          <ScrollAnimation 
+            animation="scale" 
+            delay={0.6} 
             className="md:col-span-5 relative hidden md:block"
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="relative h-[600px] w-full">
               <div className="absolute inset-0 border border-foreground/10 transform rotate-2" />
@@ -95,7 +73,7 @@ export function HeroSection() {
               />
               <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-primary/5 -z-10" />
             </div>
-          </motion.div>
+          </ScrollAnimation>
         </div>
       </div>
     </div>
