@@ -9,8 +9,8 @@ import { motion } from "framer-motion"
 const navItems = [
     { href: "/", label: "Accueil" },
     { href: "/#features", label: "Caractéristiques" },
-    { href: "/#video", label: "Vidéo" },
     { href: "/#buy-now", label: "Commander" },
+    { href: "/#histoire", label: "Histoire" },
     { href: "/#faq", label: "FAQ" },
 ]
 

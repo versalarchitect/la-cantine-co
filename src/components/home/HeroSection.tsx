@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { CommandButton } from "@/components/ui/command-button"
 import { LearnMoreButton } from "@/components/ui/learn-more-button"
 import { ScrollAnimation } from "@/components/ui/scroll-animation"
+import { OliveIcon } from "@/components/icons/Olive"
 
 export function HeroSection() {
   return (
@@ -30,8 +31,9 @@ export function HeroSection() {
               <h1 className="text-[4.5rem] md:text-[6rem] leading-[0.95] font-bold mb-0 tracking-tight">
                 Goûtez
                 <span className="block font-light text-primary/90">l&apos;Excellence</span>
+              
               </h1>
-              <div className="absolute -right-8 top-4 w-16 h-16 border border-foreground/20 -z-10" />
+              <OliveIcon className="absolute -right-8 top-4 w-24 h-24 text-primary/15 rotate-[28deg] -z-10 transform-gpu hover:scale-105 transition-transform duration-700" />
             </ScrollAnimation>
 
             <ScrollAnimation animation="fade" delay={0.6}>

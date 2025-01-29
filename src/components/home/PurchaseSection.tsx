@@ -27,7 +27,7 @@ const guarantees = [
 
 export function PurchaseSection() {
   return (
-    <section id="buy-now" className="bg-background py-16 relative overflow-hidden">
+    <section id="buy-now" className="bg-background py-16 relative overflow-hidden border-b border-dashed border-primary/10">
       {/* Brutalist geometric shapes */}
       <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 transform rotate-45" />
       <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary/30 -rotate-12" />

@@ -34,12 +34,12 @@ export function ProductDetails({ product }: ProductDetailsProps) {
   return (
     <div className="grid gap-8 lg:gap-16 lg:grid-cols-2">
       <Card className="overflow-hidden bg-card border-none transition-colors">
-        <div className="relative aspect-square group">
+        <div className="relative aspect-square group rounded-lg">
           <Image
             src={product.imageUrl || "/bouteille.jpg"}
             alt={product.name}
             fill
-            className="object-contain rounded-md p-4 transition-all duration-300 group-hover:scale-105"
+            className="object-contain p-4 transition-all duration-300 group-hover:scale-105 rounded-lg"
             priority
             sizes="(max-width: 768px) 100vw, 50vw"
           />

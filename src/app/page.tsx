@@ -1,9 +1,8 @@
 import { HeroSection } from "@/components/home/HeroSection"
-import { ProductFeatures } from "@/components/home/ProductFeatures"
-import { SocialProof } from "@/components/home/SocialProof"
-import { PurchaseSection } from "@/components/home/PurchaseSection"
-import { VideoSection } from "@/components/home/VideoSection"
-import { FAQ } from "@/components/home/FAQ"
+import { AboutSection } from "@/components/home/AboutSection"
+import { ProductsSection } from "@/components/home/ProductsSection"
+import { VideoContainer } from "@/components/home/VideoContainer"
+import { ContactSection } from "@/components/home/ContactSection"
 import type { Metadata } from "next"
 import { JsonLd } from "@/components/JsonLd"
 
@@ -114,17 +113,18 @@ export const metadata: Metadata = {
   },
 }
 
-export default function HomePage() {
+export default async function HomePage() {
   return (
     <>
       <JsonLd data={websiteJsonLd} />
       <JsonLd data={faqJsonLd} />
-      <HeroSection />
-      <ProductFeatures />
-      <VideoSection />
-      <SocialProof />
-      <PurchaseSection />
-      <FAQ />
+      <main className="flex flex-col">
+        <HeroSection />
+        <AboutSection />
+        <ProductsSection />
+        <VideoContainer />
+        <ContactSection />
+      </main>
     </>
   )
 }
