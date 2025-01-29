@@ -1,44 +1,22 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ShoppingBag, Minus, Plus, Check } from "lucide-react"
 import { useCart } from "@/hooks/use-cart"
-import { getProductById } from "@/lib/db/products"
 import type { Product } from "@/types"
 import { formatPrice } from "@/lib/utils"
 
 interface ProductDetailsProps {
-  productId: string;
+  product: Product;
 }
 
-export function ProductDetails({ productId }: ProductDetailsProps) {
+export function ProductDetails({ product }: ProductDetailsProps) {
   const [quantity, setQuantity] = useState(1)
   const [addedToCart, setAddedToCart] = useState(false)
-  const [product, setProduct] = useState<Product | null>(null)
   const { addItem } = useCart()
-
-  useEffect(() => {
-    const loadProduct = async () => {
-      const productData = await getProductById(productId)
-      if (productData) {
-        // Set default values for optional fields
-        setProduct({
-          ...productData,
-          imageUrl: productData.imageUrl || "/bouteille.jpg",
-          inventory: productData.inventory || 100,
-          category: productData.category || "Huiles"
-        })
-      }
-    }
-    loadProduct()
-  }, [productId])
-
-  if (!product) {
-    return <div>Loading...</div>
-  }
 
   const handleQuantityChange = (delta: number) => {
     const newQuantity = quantity + delta

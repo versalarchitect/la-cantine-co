@@ -29,12 +29,18 @@ export function CartSummary() {
     try {
       setLoading(true)
       
+      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+      
       const checkoutItems = items.map(item => ({
         name: item.name,
         description: item.description || "Huile d'olive extra vierge de première qualité",
         price: item.price,
         quantity: item.quantity,
-        imageUrl: item.imageUrl || `${process.env.NEXT_PUBLIC_BASE_URL}/bouteille.jpg`
+        imageUrl: item.imageUrl 
+          ? (item.imageUrl.startsWith('http') 
+              ? item.imageUrl 
+              : `${baseUrl}${item.imageUrl.startsWith('/') ? '' : '/'}${item.imageUrl}`)
+          : `${baseUrl}/images/bouteille.jpg`
       }))
 
       const response = await fetch('/api/checkout', {
@@ -50,15 +56,19 @@ export function CartSummary() {
       const data = await response.json()
 
       if (!response.ok) {
-        throw new Error(data.error || 'Something went wrong')
+        throw new Error(data.error || 'Une erreur est survenue lors du paiement')
+      }
+
+      if (!data.url) {
+        throw new Error('URL de paiement non reçue')
       }
 
       window.location.href = data.url
     } catch (error) {
       console.error('[CHECKOUT_ERROR]', error)
       // You might want to show an error toast here
-    } finally {
       setLoading(false)
+      alert(error instanceof Error ? error.message : 'Une erreur est survenue lors du paiement')
     }
   }
 

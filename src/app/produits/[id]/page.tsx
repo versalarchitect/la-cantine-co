@@ -91,29 +91,42 @@ export default async function ProductPage({ params }: Props) {
   const product = await getProductById(params.id)
   
   if (!product) {
-    return null
+    return (
+      <div className="container max-w-[1400px] mx-auto px-6 py-12 sm:px-8 lg:px-12">
+        <h1 className="text-2xl font-bold">Produit non trouvé</h1>
+        <p className="mt-4">Le produit que vous recherchez n'existe pas.</p>
+      </div>
+    )
+  }
+
+  // Set default values for optional fields
+  const enrichedProduct = {
+    ...product,
+    imageUrl: product.imageUrl || "/bouteille.jpg",
+    inventory: product.inventory || 100,
+    category: product.category || "Huiles"
   }
 
   const productJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: product.name,
-    description: product.description,
-    image: product.imageUrl || '/images/products/default.jpg',
+    name: enrichedProduct.name,
+    description: enrichedProduct.description,
+    image: enrichedProduct.imageUrl,
     offers: {
       '@type': 'Offer',
-      price: (product.price / 100).toFixed(2),
+      price: (enrichedProduct.price / 100).toFixed(2),
       priceCurrency: 'EUR',
-      availability: product.inventory && product.inventory > 0 
+      availability: enrichedProduct.inventory && enrichedProduct.inventory > 0 
         ? 'https://schema.org/InStock' 
         : 'https://schema.org/OutOfStock',
-      url: `https://lacantine.co/produits/${product.id}`,
+      url: `https://lacantine.co/produits/${enrichedProduct.id}`,
     },
     brand: {
       '@type': 'Brand',
       name: 'La Cantine & Co'
     },
-    category: product.category || 'Huile d\'olive',
+    category: enrichedProduct.category,
     countryOfOrigin: {
       '@type': 'Country',
       name: 'Italie'
@@ -134,9 +147,9 @@ export default async function ProductPage({ params }: Props) {
       <JsonLd data={productJsonLd} />
       <main className="flex-1 bg-background">
         <div className="container max-w-[1400px] mx-auto px-6 py-12 sm:px-8 lg:px-12">
-          <Breadcrumbs product={product} />
+          <Breadcrumbs product={enrichedProduct} />
           <div className="bg-card rounded-lg">
-            <ProductDetails productId={product.id} />
+            <ProductDetails product={enrichedProduct} />
           </div>
         </div>
       </main>

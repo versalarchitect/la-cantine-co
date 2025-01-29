@@ -1,12 +1,10 @@
 import { cn } from "@/lib/utils"
 
-interface ShellProps extends React.HTMLAttributes<HTMLDivElement> {}
-
 export function Shell({
   children,
   className,
   ...props
-}: ShellProps) {
+}: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       className={cn(
