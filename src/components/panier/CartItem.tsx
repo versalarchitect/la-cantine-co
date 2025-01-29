@@ -40,7 +40,7 @@ export function CartItem({ item }: CartItemProps) {
         whileHover={{ scale: 1.05 }}
       >
         <Image
-          src="/bouteille.jpg"
+          src="/images/bouteille.jpg"
           alt={item.name}
           fill
           className="object-cover rounded-md"

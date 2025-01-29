@@ -17,7 +17,7 @@ export async function generateMetadata(
   if (!product) {
     return {
       title: "Produit non trouvé",
-      description: "Le produit que vous recherchez n'existe pas.",
+      description: "Le produit que vous recherchez n&apos;existe pas.",
     }
   }
 
@@ -94,7 +94,7 @@ export default async function ProductPage({ params }: Props) {
     return (
       <div className="container max-w-[1400px] mx-auto px-6 py-12 sm:px-8 lg:px-12">
         <h1 className="text-2xl font-bold">Produit non trouvé</h1>
-        <p className="mt-4">Le produit que vous recherchez n'existe pas.</p>
+        <p className="mt-4">Le produit que vous recherchez n&apos;existe pas.</p>
       </div>
     )
   }

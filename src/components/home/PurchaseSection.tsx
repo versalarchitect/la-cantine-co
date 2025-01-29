@@ -61,7 +61,7 @@ export function PurchaseSection() {
         </div>
 
         <div className="text-left">
-          <Button 
+        <Button 
             asChild 
             size="lg" 
             className="gap-2 bg-primary hover:bg-primary/90 text-primary-foreground

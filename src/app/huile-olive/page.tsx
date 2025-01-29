@@ -4,6 +4,7 @@ import { getProductById } from "@/lib/db/products"
 import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
 import { JsonLd } from "@/components/JsonLd"
+import { notFound } from "next/navigation"
 
 export async function generateMetadata(): Promise<Metadata> {
   const product = await getProductById("huile-olive-1l")
@@ -70,7 +71,7 @@ function Breadcrumbs() {
   return (
     <>
       <JsonLd data={breadcrumbsJsonLd} />
-      <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6" aria-label="Fil d&apos;Ariane">
+      <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6" aria-label="Fil d'Ariane">
         <Link href="/" className="hover:text-foreground transition-colors">
           Accueil
         </Link>
@@ -85,7 +86,7 @@ export default async function ProductPage() {
   const product = await getProductById("huile-olive-1l")
   
   if (!product) {
-    return null
+    notFound()
   }
 
   const productJsonLd = {
@@ -129,7 +130,7 @@ export default async function ProductPage() {
         <div className="container max-w-[1400px] mx-auto px-6 py-12 sm:px-8 lg:px-12">
           <Breadcrumbs />
           <div className="bg-card rounded-lg">
-            <ProductDetails productId="huile-olive-1l" />
+            <ProductDetails product={product} />
           </div>
         </div>
       </main>

@@ -51,9 +51,9 @@ export async function POST(request: Request) {
           product_data: {
             name: item.name,
             description: item.description,
-            images: item.imageUrl ? [new URL(item.imageUrl, baseUrl).toString()] : undefined,
+            images: item.imageUrl ? [item.imageUrl] : undefined,
           },
-          unit_amount: item.price,
+          unit_amount: Math.round(item.price * 100),
         },
         quantity: item.quantity || 1,
       })),
