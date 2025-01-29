@@ -4,15 +4,14 @@ import { cn } from "@/lib/utils"
 import type { ButtonProps } from "@/components/ui/button"
 
 interface LearnMoreButtonProps extends Omit<ButtonProps, 'asChild'> {
-  href: string
   className?: string
 }
 
-export function LearnMoreButton({ href, className, ...props }: LearnMoreButtonProps) {
+export function LearnMoreButton({ className, ...props }: LearnMoreButtonProps) {
   return (
     <Button
       asChild
-      variant="outline"
+      variant="outline" 
       size="lg"
       className={cn(
         "h-12 gap-2 border-2 border-foreground/20",
@@ -22,9 +21,9 @@ export function LearnMoreButton({ href, className, ...props }: LearnMoreButtonPr
       )}
       {...props}
     >
-      <Link href={href} className="flex items-center">
+      <Link href="/#histoire" className="flex items-center">
         En savoir plus
       </Link>
     </Button>
   )
-} 
+}

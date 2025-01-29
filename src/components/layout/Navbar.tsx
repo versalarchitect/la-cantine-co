@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation"
 import { CartSheet } from "@/components/panier/CartSheet"
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
+import { NavbarLogo } from "./NavbarLogo"
 
 const navItems = [
     { href: "/", label: "Accueil" },
@@ -43,9 +44,7 @@ export function Navbar() {
         >
             <div className="container mx-auto flex h-16 items-center px-4">
                 <motion.div variants={itemVariants}>
-                    <Link href="/" className="flex items-center gap-2">
-                        <span className="text-xl font-bold">La Cantine & Co</span>
-                    </Link>
+                    <NavbarLogo />
                 </motion.div>
 
                 <div className="ml-auto flex items-center gap-6">
