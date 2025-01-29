@@ -1,10 +1,9 @@
 'use client';
 
-import React, { Component, ErrorInfo, ReactNode } from 'react';
+import React, { Component, ReactNode } from 'react';
 
 interface Props {
-  children: ReactNode;
-  fallback?: ReactNode;
+  children?: ReactNode;
 }
 
 interface State {
@@ -16,17 +15,21 @@ export class ErrorBoundary extends Component<Props, State> {
     hasError: false
   };
 
-  public static getDerivedStateFromError(_: Error): State {
+  public static getDerivedStateFromError(): State {
     return { hasError: true };
   }
 
-  public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error('Uncaught error:', error, errorInfo);
+  public componentDidCatch(error: Error) {
+    console.error('Uncaught error:', error);
   }
 
   public render() {
     if (this.state.hasError) {
-      return this.props.fallback || <div>Something went wrong.</div>;
+      return (
+        <div className="flex min-h-screen items-center justify-center">
+          <h1 className="text-xl font-semibold">Something went wrong.</h1>
+        </div>
+      );
     }
 
     return this.props.children;
