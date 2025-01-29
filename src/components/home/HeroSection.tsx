@@ -6,6 +6,7 @@ import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
 import { CommandButton } from "@/components/ui/command-button"
+import { LearnMoreButton } from "@/components/ui/learn-more-button"
 
 export function HeroSection() {
   return (
@@ -45,17 +46,17 @@ export function HeroSection() {
               <div className="absolute -right-8 top-4 w-16 h-16 border border-foreground/20 -z-10" />
             </motion.div>
 
-            <motion.p 
+            <motion.p
               className="text-xl md:text-2xl mt-10 mb-10 max-w-xl font-light text-foreground/80"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              Notre huile d&apos;olive est limpide, d&apos;un beau jaune aux reflets verts, avec un parfum fruité 
+              Notre huile d&apos;olive est limpide, d&apos;un beau jaune aux reflets verts, avec un parfum fruité
               et des notes d&apos;amande.
             </motion.p>
 
-            <motion.div 
+            <motion.div
               className="mb-10 pl-6 border-l border-primary/30"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -65,21 +66,16 @@ export function HeroSection() {
               <div className="text-sm text-foreground/60">Pressée à froid · Moulin « Panorama » · Pieralisi</div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="flex gap-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.8 }}
             >
-              <CommandButton 
-                href="/achat" 
-                className="h-12 px-6 text-base" 
+              <CommandButton
+                className="h-12 px-6 text-base"
               />
-              <Link href="/huile-d-olive">
-                <Button variant="outline" size="lg" className="h-12 px-6 text-base hover:translate-y-[-1px] transition-transform">
-                  En Savoir Plus
-                </Button>
-              </Link>
+              <LearnMoreButton href="/huile-olive" />
             </motion.div>
           </div>
 
@@ -93,7 +89,7 @@ export function HeroSection() {
             <div className="relative h-[600px] w-full">
               <div className="absolute inset-0 border border-foreground/10 transform rotate-2" />
               <Image
-                src="/bouteille.jpg"
+                src="/images/bouteille.jpg"
                 alt="Bouteille d'huile d'olive premium"
                 fill
                 className="object-contain z-10"
