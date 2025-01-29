@@ -2,6 +2,7 @@ import { HeroSection } from "@/components/home/HeroSection"
 import { ProductFeatures } from "@/components/home/ProductFeatures"
 import { SocialProof } from "@/components/home/SocialProof"
 import { PurchaseSection } from "@/components/home/PurchaseSection"
+import { VideoSection } from "@/components/home/VideoSection"
 import { FAQ } from "@/components/home/FAQ"
 import type { Metadata } from "next"
 import { JsonLd } from "@/components/JsonLd"
@@ -113,24 +114,17 @@ export const metadata: Metadata = {
   },
 }
 
-export default async function HomePage() {
+export default function HomePage() {
   return (
     <>
       <JsonLd data={websiteJsonLd} />
       <JsonLd data={faqJsonLd} />
-      <main className="flex flex-col gap-16">
-        <HeroSection />
-        <section id="about">
-          <ProductFeatures />
-          <SocialProof />
-        </section>
-        <section id="products">
-          <PurchaseSection />
-        </section>
-        <section id="contact">
-          <FAQ />
-        </section>
-      </main>
+      <HeroSection />
+      <ProductFeatures />
+      <VideoSection />
+      <SocialProof />
+      <PurchaseSection />
+      <FAQ />
     </>
   )
 }
