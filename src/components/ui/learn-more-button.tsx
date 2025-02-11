@@ -5,9 +5,10 @@ import type { ButtonProps } from "@/components/ui/button"
 
 interface LearnMoreButtonProps extends Omit<ButtonProps, 'asChild'> {
   className?: string
+  href?: string
 }
 
-export function LearnMoreButton({ className, ...props }: LearnMoreButtonProps) {
+export function LearnMoreButton({ className, href = "/#histoire", ...props }: LearnMoreButtonProps) {
   return (
     <Button
       asChild
@@ -21,7 +22,7 @@ export function LearnMoreButton({ className, ...props }: LearnMoreButtonProps) {
       )}
       {...props}
     >
-      <Link href="/#histoire" className="flex items-center">
+      <Link href={href} className="flex items-center">
         En savoir plus
       </Link>
     </Button>

@@ -38,15 +38,15 @@ export function HeroSection() {
 
             <ScrollAnimation animation="fade" delay={0.6}>
               <p className="mt-6 text-lg text-foreground/80">
-                Notre huile d&apos;olive est limpide, d&apos;un beau jaune aux reflets verts, avec un parfum fruité
+                Notre huile d&apos;olive est limpide, d&apos;une belle couleur dorée, avec un parfum fruité
                 et des notes d&apos;amande.
               </p>
             </ScrollAnimation>
 
             <ScrollAnimation animation="slide" delay={0.8}>
               <div className="mt-8 mb-10 pl-6 border-l border-primary/30">
-                <div className="text-lg font-medium">Qualité Premium</div>
-                <div className="text-sm text-foreground/60">Pressée à froid · Moulin « Panorama » · Pieralisi</div>
+                <div className="text-lg font-medium">Huile d’olive extra vierge pressée à froid de qualité Coratin</div>
+                <div className="text-sm text-foreground/60">Origine 100% italienne en provenance des Pouilles</div>
               </div>
             </ScrollAnimation>
 

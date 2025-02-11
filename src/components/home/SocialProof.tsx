@@ -25,9 +25,10 @@ const testimonials = [
 ]
 
 const stats = [
-  { id: "s1", label: "Années d'Expertise", value: "25+" },
-  { id: "s2", label: "Clients Satisfaits", value: "5k+" },
-  { id: "s3", label: "Acidité Moyenne", value: "0.25%" }
+  { id: "s1", label: "Fondation de la Cantine", value: "2023" },
+  { id: "s2", label: "Clients Satisfaits", value: "500+" },
+  { id: "s3", label: "Acidité Moyenne", value: "<2%" },
+  { id: "s4", label: "Oliviers Centenaire", value: "100+ ans" }
 ]
 
 export function SocialProof() {

@@ -11,7 +11,7 @@ const features = [
   {
     id: "process",
     title: "Extraction à Froid Traditionnelle",
-    description: "Pressée selon les méthodes ancestrales des Pouilles pour préserver les polyphénols et l'intensité aromatique caractéristique de la Coratina",
+    description: "Pressée selon les méthodes ancestrales des Pouilles dans un moulin «Panorama» Pieralisi pour préserver les polyphénols et l'intensité aromatique caractéristique de la Coratina",
     icon: "/icons/process.svg"
   },
   {
@@ -22,8 +22,8 @@ const features = [
   },
   {
     id: "taste",
-    title: "Profil Organoleptique Intense",
-    description: "Une amertume prononcée et une ardence caractéristique, équilibrées par des notes vertes d'herbe fraîche, de tomate et d'artichaut",
+    title: "PROFIL GUSTATIF QUI SE DISTINGUE",
+    description: "Une légère amertume équilibrée de notes fruitées : herbe fraîche, tomates et artichaut. Un pourcentage d’acidité inférieur à 2%.",
     icon: "/icons/taste.svg"
   }
 ]
@@ -52,7 +52,7 @@ export function ProductFeatures() {
                 Coratina
               </h2>
               <h2 className="font-serif text-5xl font-bold tracking-tight text-gray-900 relative">
-                L&apos;Excellence de<br />l&apos;Artisanat Italien
+                L&apos;Excellence de<br />l&apos;Artisanat Italien du Sud
               </h2>
             </div>
             <p className="mt-8 text-lg text-gray-600 border-l border-primary/60 pl-6">
