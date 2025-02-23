@@ -3,18 +3,24 @@ import type { Config } from "tailwindcss";
 export default {
     darkMode: ["class"],
     content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+  	container: {
+  		center: true,
+  		padding: "2rem",
+  		screens: {
+  			"2xl": "1400px",
+  		},
+  	},
   	extend: {
   		fontFamily: {
-  			sans: ['var(--font-sans)'],
-  			heading: ['var(--font-heading)'],
-  			body: ['var(--font-body)'],
-  			display: ['var(--font-display)'],
-  			mono: ['var(--font-mono)'],
+  			body: ["var(--font-lora)"],
+  			display: ["var(--font-playfair)"],
+  			sans: ["var(--font-inter)"],
+  			serif: ["var(--font-cormorant)"],
   		},
   		colors: {
   			background: 'hsl(var(--background))',
@@ -62,7 +68,44 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+  		keyframes: {
+  			"accordion-down": {
+  				from: { height: "0" },
+  				to: { height: "var(--radix-accordion-content-height)" },
+  			},
+  			"accordion-up": {
+  				from: { height: "var(--radix-accordion-content-height)" },
+  				to: { height: "0" },
+  			},
+        "olive-bounce": {
+          "0%": { 
+            transform: "translate(0, 0) rotate(0deg)",
+            opacity: "1"
+          },
+          "25%": {
+            transform: "translate(-2px, -6px) rotate(-2deg)",
+            opacity: "0.9"
+          },
+          "50%": { 
+            transform: "translate(0, -2px) rotate(0deg)",
+            opacity: "0.95"
+          },
+          "75%": {
+            transform: "translate(2px, -6px) rotate(2deg)",
+            opacity: "0.9"
+          },
+          "100%": {
+            transform: "translate(0, 0) rotate(0deg)",
+            opacity: "1"
+          }
+        },
+  		},
+  		animation: {
+  			"accordion-down": "accordion-down 0.2s ease-out",
+  			"accordion-up": "accordion-up 0.2s ease-out",
+        "olive-bounce": "olive-bounce 3s cubic-bezier(0.68, -0.6, 0.32, 1.6) infinite"
+  		},
   	}
   },
   plugins: [require("tailwindcss-animate")],
