@@ -54,9 +54,9 @@ export function Navbar() {
                                 <Link
                                     href={item.href}
                                     className={cn(
-                                        "text-sm font-medium transition-colors hover:text-primary",
+                                        "text-sm font-medium transition-colors hover:text-primary font-display",
                                         pathname === item.href
-                                            ? "text-primary"
+                                            ? "text-primary font-display"
                                             : "text-muted-foreground"
                                     )}
                                 >

@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ShoppingBag, Shield, Truck, CreditCard } from "lucide-react"
+import { Shield, Truck, CreditCard, InfoIcon } from "lucide-react"
 import Link from "next/link"
 
 const guarantees = [
@@ -69,7 +69,7 @@ export function PurchaseSection() {
                        hover:border-primary transition-all duration-300"
           >
             <Link href="/huile-olive" className="flex items-center">
-              Commander <ShoppingBag className="h-6 w-6 ml-2" />
+              En apprendre plus <InfoIcon className="h-6 w-6 ml-2" />
             </Link>
           </Button>
         </div>

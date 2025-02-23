@@ -45,7 +45,7 @@ Suggestions d'utilisation:
 • Sublime les salades et les soupes de légumes
 • Idéale pour les bruschetta et la cuisine méditerranéenne
 • À utiliser crue pour préserver ses qualités nutritionnelles exceptionnelles`,
-    price: 35,
+    price: 3500,
     featured: true,
     imageUrl: "/images/products/olive-oil.jpg"
   },

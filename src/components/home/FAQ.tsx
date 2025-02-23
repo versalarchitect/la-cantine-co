@@ -142,7 +142,7 @@ export function FAQ() {
             >
               <h2 className="text-[3.5rem] md:text-[4rem] leading-[0.95] font-bold tracking-tight">
                 FAQ
-                <span className="text-primary/90">.</span>
+                <span className="text-primary/90 font-display">.</span>
               </h2>
               <div className="absolute -right-4 top-2 w-8 h-8 border border-foreground/20 -z-10" />
             </motion.div>
@@ -185,7 +185,7 @@ export function FAQ() {
                               scale: 1.05,
                               transition: { duration: 0.2 }
                             }}
-                            className="font-mono text-sm font-light text-primary/80"
+                            className="font-mono text-sm font-light text-primary/80 font-display"
                           >
                             0{index + 1}
                           </motion.span>

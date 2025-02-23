@@ -23,7 +23,7 @@ export function VideoSection() {
             </Badge>
             
             <h2 className="text-[4rem] font-serif leading-none mb-6">
-              Notre Passion<span className="text-primary">.</span>
+              Notre Passion<span className="text-primary font-display">.</span>
             </h2>
             
             <p className="text-lg text-muted-foreground max-w-2xl">
