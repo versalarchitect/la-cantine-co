@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { CartSheet } from "@/components/panier/CartSheet"
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
 import { NavbarLogo } from "./NavbarLogo"
@@ -65,10 +64,6 @@ export function Navbar() {
                             </motion.div>
                         ))}
                     </div>
-
-                    <motion.div variants={itemVariants} className="ml-8">
-                        <CartSheet />
-                    </motion.div>
                 </div>
             </div>
         </motion.nav>

@@ -154,39 +154,14 @@ html {
   }
 }
 
-/* Product Typography */
-.product-title {
-  @apply font-display text-4xl md:text-5xl lg:text-6xl leading-tight font-light text-foreground/90 mb-6;
-  font-feature-settings: "liga" 1, "kern" 1, "swsh" 1;
-}
-
-.product-price {
-  @apply font-display text-3xl md:text-4xl font-normal text-primary mb-8;
-}
-
-.product-description {
-  @apply font-body text-lg md:text-xl leading-relaxed text-foreground/80 mb-8 max-w-prose;
-}
-
-.feature-title {
-  @apply font-display text-xl font-medium text-foreground/90 mb-2;
-}
-
-.feature-description {
-  @apply font-body text-base md:text-lg leading-relaxed text-foreground/70;
-}
-
-.benefits-section {
-  @apply font-display text-2xl font-medium text-foreground/90 mb-6;
-}
-
-.benefits-item {
-  @apply font-body text-lg leading-relaxed text-foreground/80 mb-4;
-}
 
 p:not(:last-child) {
   margin-bottom: 1rem;
 }
+
+
+
+
 
 @layer base {
   * {

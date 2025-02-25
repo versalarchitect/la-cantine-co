@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
 import { NavbarLogo } from "./NavbarLogo"
+import { Button } from "@/components/ui/button"
 
 const navItems = [
     { href: "/", label: "Accueil" },
@@ -64,6 +65,13 @@ export function Navbar() {
                             </motion.div>
                         ))}
                     </div>
+                    <motion.div variants={itemVariants}>
+                        <Button asChild variant="default">
+                            <Link href="/checkout">
+                                Commander maintenant
+                            </Link>
+                        </Button>
+                    </motion.div>
                 </div>
             </div>
         </motion.nav>

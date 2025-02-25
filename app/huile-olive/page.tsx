@@ -8,9 +8,9 @@ const product = {
   id: "huile-olive-1l",
   name: "Huile d'Olive Extra Vierge Coratina 1L",
   description: "Notre huile d'olive Coratina est une huile d'olive extra vierge (EVOO) exceptionnelle, produite dans la région des Pouilles (Puglia) en Italie du Sud.",
-  price: 4900, // $49.00 CAD
+  price: 35, // $49.00 CAD
   imageUrl: "/images/bouteille.jpg",
-  inventory: 100
+  inventory: 750
 }
 
 export const metadata: Metadata = {

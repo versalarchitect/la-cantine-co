@@ -4,29 +4,22 @@ import { useState } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { ShoppingBag, Minus, Plus, Check } from "lucide-react"
+import { ShoppingBag, Check } from "lucide-react"
 import { useCart } from "@/hooks/use-cart"
 import type { Product } from "@/types"
 import { formatPrice } from "@/lib/utils"
+import Link from "next/link"
 
 interface ProductDetailsProps {
   product: Product;
 }
 
 export function ProductDetails({ product }: ProductDetailsProps) {
-  const [quantity, setQuantity] = useState(1)
   const [addedToCart, setAddedToCart] = useState(false)
   const { addItem } = useCart()
 
-  const handleQuantityChange = (delta: number) => {
-    const newQuantity = quantity + delta
-    if (newQuantity >= 1) {
-      setQuantity(newQuantity)
-    }
-  }
-
   const handleAddToCart = () => {
-    addItem({ product, quantity })
+    addItem({ product, quantity: 1 })
     setAddedToCart(true)
     setTimeout(() => setAddedToCart(false), 2000)
   }
@@ -50,33 +43,17 @@ export function ProductDetails({ product }: ProductDetailsProps) {
         <div className="space-y-4">
           <h1 className="text-3xl font-bold">{product.name}</h1>
           <p className="text-2xl font-semibold">{formatPrice(product.price)}</p>
-          
-          <div className="flex items-center gap-4">
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => handleQuantityChange(-1)}
-            >
-              <Minus className="h-4 w-4" />
-            </Button>
-            <span className="text-xl">{quantity}</span>
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => handleQuantityChange(1)}
-            >
-              <Plus className="h-4 w-4" />
-            </Button>
-          </div>
-          
-          <Button 
+
+          <Button
             onClick={handleAddToCart}
             className="w-full"
           >
-            <ShoppingBag className="mr-2 h-4 w-4" />
-            Ajouter au panier
+            <Link target="_blank" href="https://buy.stripe.com/aEU9DsbuP3u79eU6op" className="flex w-full items-center justify-center">
+              <ShoppingBag className="mr-2 h-4 w-4" />
+              Commander
+            </Link>
           </Button>
-          
+
           {addedToCart && (
             <p className="text-green-600">Produit ajouté au panier!</p>
           )}
