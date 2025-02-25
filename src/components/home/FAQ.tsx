@@ -185,7 +185,7 @@ export function FAQ() {
                               scale: 1.05,
                               transition: { duration: 0.2 }
                             }}
-                            className="font-mono text-sm font-light text-primary/80 font-display"
+                            className="font-mono text-sm font-light text-primary/80"
                           >
                             0{index + 1}
                           </motion.span>

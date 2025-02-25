@@ -15,14 +15,6 @@ interface ProductDetailsProps {
 }
 
 export function ProductDetails({ product }: ProductDetailsProps) {
-  const [addedToCart, setAddedToCart] = useState(false)
-  const { addItem } = useCart()
-
-  const handleAddToCart = () => {
-    addItem({ product, quantity: 1 })
-    setAddedToCart(true)
-    setTimeout(() => setAddedToCart(false), 2000)
-  }
 
   return (
     <div className="grid gap-8 lg:gap-16 lg:grid-cols-2">
@@ -45,7 +37,6 @@ export function ProductDetails({ product }: ProductDetailsProps) {
           <p className="text-2xl font-semibold">{formatPrice(product.price)}</p>
 
           <Button
-            onClick={handleAddToCart}
             className="w-full"
           >
             <Link target="_blank" href="https://buy.stripe.com/aEU9DsbuP3u79eU6op" className="flex w-full items-center justify-center">
@@ -53,10 +44,6 @@ export function ProductDetails({ product }: ProductDetailsProps) {
               Commander
             </Link>
           </Button>
-
-          {addedToCart && (
-            <p className="text-green-600">Produit ajouté au panier!</p>
-          )}
         </div>
 
         <div className="space-y-4">
