@@ -67,7 +67,7 @@ export function Navbar() {
                     </div>
                     <motion.div variants={itemVariants}>
                         <Button asChild variant="default">
-                            <Link href="/checkout">
+                            <Link href="https://buy.stripe.com/aEU9DsbuP3u79eU6op" target="_blank" rel="noopener noreferrer">
                                 Commander maintenant
                             </Link>
                         </Button>
