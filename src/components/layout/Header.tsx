@@ -1,7 +1,9 @@
 "use client"
 
 import Link from "next/link";
+import { usePathname } from "next/navigation"
 import { CartSheet } from "@/components/panier/CartSheet";
+import { CommandButton } from "@/components/ui/command-button";
 
 const scrollToSection = (sectionId: string) => {
   const element = document.getElementById(sectionId);
@@ -18,6 +20,9 @@ const scrollToSection = (sectionId: string) => {
 };
 
 export function Header() {
+  const pathname = usePathname()
+  const isProductPage = pathname === "/huile-olive"
+
   return (
     <header className="border-b fixed w-full top-0 bg-white/80 backdrop-blur-sm z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,31 +31,38 @@ export function Header() {
             La Cantine & Co
           </Link>
           
-          <nav className="hidden md:flex items-center gap-8">
-            <button 
-              type="button"
-              onClick={() => scrollToSection('about')}
-              className="text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              About
-            </button>
-            <button 
-              type="button"
-              onClick={() => scrollToSection('products')}
-              className="text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              Products
-            </button>
-            <button 
-              type="button"
-              onClick={() => scrollToSection('contact')}
-              className="text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              Contact
-            </button>
-          </nav>
+          {!isProductPage && (
+            <nav className="hidden md:flex items-center gap-8">
+              <button 
+                type="button"
+                onClick={() => scrollToSection('about')}
+                className="text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                About
+              </button>
+              <button 
+                type="button"
+                onClick={() => scrollToSection('products')}
+                className="text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                Products
+              </button>
+              <button 
+                type="button"
+                onClick={() => scrollToSection('contact')}
+                className="text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                Contact
+              </button>
+            </nav>
+          )}
 
-          <CartSheet />
+          <div className="flex items-center gap-4">
+            {isProductPage && (
+              <CommandButton className="h-10 px-4 text-sm" />
+            )}
+            <CartSheet />
+          </div>
         </div>
       </div>
     </header>

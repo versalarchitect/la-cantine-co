@@ -4,6 +4,8 @@ import "./globals.css";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Toaster } from "@/components/ui/toaster";
 import { JsonLd } from "@/components/JsonLd";
+import { ScrollToTop } from "@/components/ui/scroll-to-top";
+import { ProgressBar } from "@/components/ui/progress-bar";
 
 const sans = Inter({
   subsets: ["latin"],
@@ -145,9 +147,11 @@ export default function RootLayout({
         <JsonLd data={organizationJsonLd} />
       </head>
       <body>
+        <ProgressBar />
         <MainLayout>
           {children}
         </MainLayout>
+        <ScrollToTop />
         <Toaster />
       </body>
     </html>

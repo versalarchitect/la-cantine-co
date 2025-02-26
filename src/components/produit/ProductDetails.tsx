@@ -1,11 +1,9 @@
 "use client"
 
-import { useState } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ShoppingBag, Check } from "lucide-react"
-import { useCart } from "@/hooks/use-cart"
 import type { Product } from "@/types"
 import { formatPrice } from "@/lib/utils"
 import Link from "next/link"
@@ -15,7 +13,6 @@ interface ProductDetailsProps {
 }
 
 export function ProductDetails({ product }: ProductDetailsProps) {
-
   return (
     <div className="grid gap-8 lg:gap-16 lg:grid-cols-2">
       <Card className="overflow-hidden bg-card border-none transition-colors">
@@ -37,7 +34,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
           <p className="text-2xl font-semibold">{formatPrice(product.price)}</p>
 
           <Button
-            className="w-full"
+              className="w-full"
           >
             <Link target="_blank" href="https://buy.stripe.com/aEU9DsbuP3u79eU6op" className="flex w-full items-center justify-center">
               <ShoppingBag className="mr-2 h-4 w-4" />

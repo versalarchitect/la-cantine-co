@@ -5,13 +5,14 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
 import { NavbarLogo } from "./NavbarLogo"
+import { Button } from "@/components/ui/button"
 
 const navItems = [
     { href: "/", label: "Accueil" },
-    { href: "/#features", label: "Caractéristiques" },
-    { href: "/#buy-now", label: "Commander" },
+    { href: "/#caracteristiques", label: "Caractéristiques" },
+    { href: "/#commander", label: "Commander" },
     { href: "/#histoire", label: "Histoire" },
-    { href: "/#faq", label: "FAQ" },
+    { href: "/#foire-aux-questions", label: "FAQ" },
 ]
 
 const navVariants = {
@@ -53,9 +54,9 @@ export function Navbar() {
                                 <Link
                                     href={item.href}
                                     className={cn(
-                                        "text-sm font-medium transition-colors hover:text-primary font-display",
+                                        "text-sm font-medium transition-colors hover:text-primary",
                                         pathname === item.href
-                                            ? "text-primary font-display"
+                                            ? "text-primary"
                                             : "text-muted-foreground"
                                     )}
                                 >
@@ -64,6 +65,13 @@ export function Navbar() {
                             </motion.div>
                         ))}
                     </div>
+                    <motion.div variants={itemVariants}>
+                        <Button asChild variant="default">
+                            <Link href="/checkout">
+                                Commander maintenant
+                            </Link>
+                        </Button>
+                    </motion.div>
                 </div>
             </div>
         </motion.nav>

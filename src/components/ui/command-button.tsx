@@ -9,21 +9,22 @@ interface CommandButtonProps extends Omit<ButtonProps, 'asChild'> {
   className?: string
 }
 
-export function CommandButton({ className, href = "/huile-olive", ...props }: CommandButtonProps) {
+export function CommandButton({ className, href = "https://buy.stripe.com/aEU9DsbuP3u79eU6op", ...props }: CommandButtonProps) {
   return (
     <Button
       asChild
       size="lg"
       className={cn(
-        "h-12 gap-2 bg-primary hover:bg-primary/90 text-primary-foreground",
-        "font-display text-base px-6 border-2 border-primary/20",
+        "h-14 gap-3 bg-primary hover:bg-primary/90 text-primary-foreground",
+        "font-display text-lg px-8 border-4 border-primary/20",
         "hover:border-primary transition-all duration-300",
+        "hover:scale-105 transform",
         className
       )}
       {...props}
     >
-      <Link href={href} className="flex items-center">
-        Commander <ShoppingBag className="h-5 w-5 ml-2" />
+      <Link href={href} target="_blank" rel="noopener noreferrer" className="flex items-center">
+        Commander maintenant <ShoppingBag className="h-6 w-6 ml-2" />
       </Link>
     </Button>
   )
