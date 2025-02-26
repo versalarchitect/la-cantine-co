@@ -9,17 +9,10 @@ const testimonials = [
     rating: 5
   },
   {
-    id: "t2",
-    name: "Marc Tremblay",
-    role: "Passionné de Cuisine",
-    content: "La qualité est remarquable. Cette huile d&apos;olive des Pouilles est devenue un incontournable dans ma cuisine. Le pressage à froid fait toute la différence.",
-    rating: 5
-  },
-  {
     id: "t3",
     name: "Julie Lemieux",
     role: "Cliente Fidèle",
-    content: "Service impeccable et produit d&apos;exception. La fraîcheur et la qualité sont toujours au rendez-vous. Je ne peux plus me passer de cette huile !",
+    content: "Service impeccable et produit d'exception. La fraîcheur et la qualité sont toujours au rendez-vous. Je ne peux plus me passer de cette huile !",
     rating: 5
   }
 ]

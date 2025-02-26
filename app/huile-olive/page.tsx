@@ -49,7 +49,7 @@ function Breadcrumbs() {
         Accueil
       </Link>
       <ChevronRight className="h-4 w-4" />
-      <span className="text-foreground">Huile d&apos;Olive</span>
+      <span className="text-foreground">{"Huile d'Olive"}</span>
     </nav>
   )
 }

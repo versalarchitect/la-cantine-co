@@ -27,7 +27,7 @@ export function VideoSection() {
             </h2>
             
             <p className="text-lg text-muted-foreground max-w-2xl">
-              Découvrez l&apos;histoire de notre huile d&apos;olive, de la récolte à votre table.
+              Découvrez l&apos;histoire de notre huile d&apos;olive, de la récolte à votre table.<br/>
               Une tradition familiale qui perdure depuis des générations.
             </p>
           </div>

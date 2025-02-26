@@ -31,7 +31,7 @@ const faqJsonLd = {
       name: 'Comment conserver l\'huile d\'olive ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Conservez l\'huile d\'olive à l\'abri de la lumière et de la chaleur, idéalement entre 15-18°C. Une fois ouverte, consommez-la dans les 3-4 mois.'
+        text: 'Conservez l\'huile d\'olive à l\'abri de la lumière et de la chaleur, idéalement entre 15-18°C.'
       }
     }
   ]

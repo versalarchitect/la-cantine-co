@@ -19,17 +19,17 @@ const faqs = [
   {
     id: "q2",
     question: "Quelles sont les caractéristiques de votre huile ?",
-    answer: "Notre huile est pressée à froid dans notre moulin Panorama de Pieralisi. Elle est limpide, jaune avec des reflets verts, au parfum fruité avec des notes d'amande. Son acidité moyenne est de 0,25."
+    answer: "Notre huile est pressée à froid dans notre moulin Panorama de Pieralisi. Elle est limpide, dorée avec des reflets verts, au parfum fruité avec des notes d'amande. Son acidité est inférieure à 2%."
   },
   {
     id: "q3",
     question: "Comment conserver l'huile d'olive ?",
-    answer: "Pour préserver toutes ses qualités, conservez l'huile d'olive à l'abri de la lumière et de la chaleur, idéalement entre 15 et 18°C. Une fois ouverte, consommez-la de préférence dans les 3 mois."
+    answer: "Pour préserver toutes ses qualités, conservez l'huile d'olive à l'abri de la lumière et de la chaleur, idéalement entre 15 et 18°C."
   },
   {
     id: "q4",
     question: "Quelles sont vos zones de livraison ?",
-    answer: "Nous livrons principalement dans la région de Longueuil et ses environs. La livraison est gratuite dans ces zones. Contactez-nous pour plus de détails sur votre secteur."
+    answer: "Nous livrons partout au Québec. La livraison est gratuite pour les commandes de 100$ et plus."
   },
   {
     id: "q5",

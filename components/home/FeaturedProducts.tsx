@@ -20,7 +20,7 @@ export function FeaturedProducts() {
         <ScrollAnimation animation="slide" delay={0.2}>
           <div className="mb-10 text-center">
             <Badge variant="secondary" className="mb-4 text-lg">
-              Produits d&apos;Exception
+              {"Produits d'Exception"}
             </Badge>
             <h2 className="mb-4 text-4xl md:text-5xl font-bold tracking-tight text-gray-900">
               L&apos;Excellence de l&apos;Huile Coratina

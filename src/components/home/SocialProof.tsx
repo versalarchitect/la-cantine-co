@@ -3,25 +3,11 @@ import { Star } from "lucide-react"
 const testimonials = [
   {
     id: "t1",
-    name: "Sophie Dubois",
-    role: "Chef à Domicile",
-    content: "Une huile d&apos;olive exceptionnelle qui sublime tous mes plats. La saveur est parfaitement équilibrée, avec des notes d&apos;amande délicates. Un vrai trésor culinaire !",
+    name: "Nataly Grégoire",
+    role: "Cliente",
+    content: "Wow ! Cette huile est un vrai délice dans l bouche. Elle ajoute un plus à mes recettes. J’adore, elle me ramène en voyage en Italie !",
     rating: 5
   },
-  {
-    id: "t2",
-    name: "Marc Tremblay",
-    role: "Passionné de Cuisine",
-    content: "La qualité est remarquable. Cette huile d&apos;olive des Pouilles est devenue un incontournable dans ma cuisine. Le pressage à froid fait toute la différence.",
-    rating: 5
-  },
-  {
-    id: "t3",
-    name: "Julie Lemieux",
-    role: "Cliente Fidèle",
-    content: "Service impeccable et produit d&apos;exception. La fraîcheur et la qualité sont toujours au rendez-vous. Je ne peux plus me passer de cette huile !",
-    rating: 5
-  }
 ]
 
 const stats = [
