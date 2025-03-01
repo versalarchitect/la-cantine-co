@@ -4,6 +4,27 @@ import { Shell } from "@/components/shell"
 export const metadata: Metadata = {
   title: "Politique de confidentialité",
   description: "Notre politique de confidentialité détaillant comment nous traitons vos données personnelles.",
+  openGraph: {
+    title: "Politique de confidentialité | La Cantine & Co",
+    description: "Notre politique de confidentialité détaillant comment nous traitons vos données personnelles.",
+    images: [
+      {
+        url: "/images/bouteille-social.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Politique de confidentialité - La Cantine & Co"
+      }
+    ],
+    type: 'website',
+    siteName: "La Cantine & Co",
+    locale: 'fr_FR',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Politique de confidentialité | La Cantine & Co",
+    description: "Notre politique de confidentialité détaillant comment nous traitons vos données personnelles.",
+    images: ["/images/bouteille-social.jpg"],
+  },
 }
 
 export default function PrivacyPolicyPage() {

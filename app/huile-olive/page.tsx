@@ -21,9 +21,9 @@ export const metadata: Metadata = {
     description: product.description,
     images: [
       {
-        url: product.imageUrl,
-        width: 800,
-        height: 600,
+        url: "/images/bouteille-social.jpg",
+        width: 1200,
+        height: 630,
         alt: product.name
       }
     ],
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: product.name,
     description: product.description,
-    images: [product.imageUrl],
+    images: ["/images/bouteille-social.jpg"],
   },
   alternates: {
     canonical: 'https://lacantine.co/huile-olive',

@@ -1,13 +1,14 @@
 import { Star } from "lucide-react"
 
 const testimonials = [
-  {
+{
     id: "t1",
-    name: "Sophie Dubois",
-    role: "Chef à Domicile",
-    content: "Une huile d&apos;olive exceptionnelle qui sublime tous mes plats. La saveur est parfaitement équilibrée, avec des notes d&apos;amande délicates. Un vrai trésor culinaire !",
+    name: "Nataly Grégoire",
+    role: "Cliented",
+    content: "Wow ! Cette huile est un vrai délice dans l bouche. Elle ajoute un plus à mes recettes. J’adore, elle me ramène en voyage en Italie !",
     rating: 5
   },
+
   {
     id: "t2",
     name: "Clarine Lacombe",

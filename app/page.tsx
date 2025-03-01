@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/images/bouteille-social.jpg",
         width: 1200,
         height: 630,
         alt: "La Cantine & Co - Huile d'Olive Premium des Pouilles"
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "La Cantine & Co | Huile d'Olive Premium des Pouilles",
     description: "Découvrez notre huile d'olive exceptionnelle pressée à froid dans les Pouilles, Italie.",
-    images: ["/images/og-image.jpg"],
+    images: ["/images/bouteille-social.jpg"],
     creator: "@lacantine",
   },
   alternates: {
