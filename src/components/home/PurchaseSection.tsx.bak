@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ShoppingBag, Shield, Truck, CreditCard } from "lucide-react"
+import { Shield, Truck, CreditCard, InfoIcon } from "lucide-react"
 import Link from "next/link"
 
 const guarantees = [
@@ -27,7 +27,7 @@ const guarantees = [
 
 export function PurchaseSection() {
   return (
-    <section id="commander" className="bg-background py-16 relative overflow-hidden border-b border-dashed border-primary/10">
+    <section id="buy-now" className="bg-background py-16 relative overflow-hidden border-b border-dashed border-primary/10">
       {/* Brutalist geometric shapes */}
       <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 transform rotate-45" />
       <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary/30 -rotate-12" />
@@ -69,7 +69,7 @@ export function PurchaseSection() {
                        hover:border-primary transition-all duration-300"
           >
             <Link href="/huile-olive" className="flex items-center">
-              Commander <ShoppingBag className="h-6 w-6 ml-2" />
+              En apprendre plus <InfoIcon className="h-6 w-6 ml-2" />
             </Link>
           </Button>
         </div>

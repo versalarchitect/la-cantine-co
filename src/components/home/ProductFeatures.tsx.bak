@@ -23,7 +23,7 @@ const features = [
   {
     id: "taste",
     title: "PROFIL GUSTATIF QUI SE DISTINGUE",
-    description: "Une légère amertume équilibrée de notes fruitées : herbe fraîche, tomates et artichaut. Un pourcentage d'acidité inférieur à 2%.",
+    description: "Une légère amertume équilibrée de notes fruitées : herbe fraîche, tomates et artichaut. Un pourcentage d’acidité inférieur à 2%.",
     icon: "/icons/taste.svg"
   }
 ]
@@ -39,7 +39,7 @@ const benefits = [
 
 export function ProductFeatures() {
   return (
-    <section id="caracteristiques" className="relative bg-background py-32 overflow-hidden">
+    <section id="features" className="relative bg-background py-32 overflow-hidden">
       {/* Brutalist decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 -rotate-12 transform translate-x-48 -translate-y-24" />
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-black/5 rotate-12 transform -translate-x-24 translate-y-24" />

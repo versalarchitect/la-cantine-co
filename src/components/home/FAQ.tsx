@@ -19,17 +19,17 @@ const faqs = [
   {
     id: "q2",
     question: "Quelles sont les caractéristiques de votre huile ?",
-    answer: "Notre huile est pressée à froid dans notre moulin Panorama de Pieralisi. Elle est limpide, dorée avec des reflets verts, au parfum fruité avec des notes d'amande. Son acidité est inférieure à 2%."
+    answer: "Notre huile est pressée à froid dans notre moulin Panorama de Pieralisi. Elle est limpide, jaune avec des reflets verts, au parfum fruité avec des notes d'amande. Son acidité moyenne est de 0,25."
   },
   {
     id: "q3",
     question: "Comment conserver l'huile d'olive ?",
-    answer: "Pour préserver toutes ses qualités, conservez l'huile d'olive à l'abri de la lumière et de la chaleur, idéalement entre 15 et 18°C."
+    answer: "Pour préserver toutes ses qualités, conservez l'huile d'olive à l'abri de la lumière et de la chaleur, idéalement entre 15 et 18°C. Une fois ouverte, consommez-la de préférence dans les 3 mois."
   },
   {
     id: "q4",
     question: "Quelles sont vos zones de livraison ?",
-    answer: "Nous livrons partout au Québec. La livraison est gratuite pour les commandes de 100$ et plus."
+    answer: "Nous livrons principalement dans la région de Longueuil et ses environs. La livraison est gratuite dans ces zones. Contactez-nous pour plus de détails sur votre secteur."
   },
   {
     id: "q5",
@@ -117,7 +117,7 @@ export function FAQ() {
   const [openItem, setOpenItem] = useState<string | undefined>(undefined)
 
   return (
-    <section id="faq" className="relative bg-background py-24 md:py-32 scroll-mt-16">
+    <section id="foire-aux-questions" className="relative bg-background py-24 md:py-32 scroll-mt-16">
       {/* Subtle grid overlay */}
       <div className="absolute inset-0 grid grid-cols-12 pointer-events-none opacity-[0.03]">
         {Array.from({ length: 12 }, (_, i) => `grid-${i + 1}`).map((key) => (
@@ -142,7 +142,7 @@ export function FAQ() {
             >
               <h2 className="text-[3.5rem] md:text-[4rem] leading-[0.95] font-bold tracking-tight">
                 FAQ
-                <span className="text-primary/90 font-display">.</span>
+                <span className="text-primary/90">.</span>
               </h2>
               <div className="absolute -right-4 top-2 w-8 h-8 border border-foreground/20 -z-10" />
             </motion.div>

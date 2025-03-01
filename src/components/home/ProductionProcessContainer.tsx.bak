@@ -1,4 +1,4 @@
-import { ProductionProcessSection } from "./ProductionProcessSection"
+import { ProductionProcessSection } from "@/components/home/ProductionProcessSection"
 import { Section } from "@/components/ui/section"
 
 export function ProductionProcessContainer() {
