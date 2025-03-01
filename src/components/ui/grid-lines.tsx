@@ -16,7 +16,7 @@ export function GridLines({
       {[...Array(12)].map((_, i) => (
         <div 
           key={`grid-line-${i + 1}`} 
-          className="border-l border-foreground/10 last:border-r" 
+          className="border-l border-foreground/20 last:border-r" 
         />
       ))}
     </div>

@@ -16,7 +16,7 @@ A modern e-commerce store built with Next.js, featuring Stripe integration, anim
 ## Tech Stack
 
 - **Framework**: Next.js 14 with App Router
-- **Runtime**: Bun
+- **Runtime**: Node.js
 - **Styling**: Tailwind CSS
 - **UI Components**: Radix UI
 - **State Management**: Zustand
@@ -26,7 +26,7 @@ A modern e-commerce store built with Next.js, featuring Stripe integration, anim
 
 ## Prerequisites
 
-- Node.js 18+ or Bun runtime
+- Node.js 18+
 - Stripe account
 - Git
 
@@ -36,7 +36,7 @@ A modern e-commerce store built with Next.js, featuring Stripe integration, anim
    ```bash
    git clone <your-repo-url>
    cd ecommerce-store
-   bun install
+   npm install
    ```
 
 2. **Environment Variables**
@@ -64,7 +64,7 @@ A modern e-commerce store built with Next.js, featuring Stripe integration, anim
 
 4. **Start Development Server**
    ```bash
-   bun dev
+   npm run dev
    ```
    Open [http://localhost:3000](http://localhost:3000) in your browser.
 
@@ -113,11 +113,11 @@ Use these test card numbers for development:
 
 ### Available Scripts
 
-- `bun dev`: Start development server
-- `bun build`: Build for production
-- `bun start`: Start production server
-- `bun lint`: Run ESLint
-- `bun type-check`: Run TypeScript compiler
+- `npm run dev`: Start development server
+- `npm run build`: Build for production
+- `npm run start`: Start production server
+- `npm run lint`: Run ESLint
+- `npm run type-check`: Run TypeScript compiler
 
 ## Error Handling
 
@@ -131,7 +131,7 @@ The application includes comprehensive error handling:
 
 1. Build the application:
    ```bash
-   bun run build
+   npm run build
    ```
 
 2. Deploy to your hosting provider (Vercel recommended)
@@ -158,7 +158,7 @@ Common issues and solutions:
    - Check Next.js image configuration
 
 3. **Type Errors**
-   - Run `bun type-check` to identify issues
+   - Run `npm run type-check` to identify issues
    - Ensure all required fields are defined in types
 
 ## Contributing

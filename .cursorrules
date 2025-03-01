@@ -15,7 +15,7 @@
     "useTabIndents": false,
     "indentSize": 2,
     "lineEnding": "lf",
-    "defaultPackageManager": "bun",
+    "defaultPackageManager": "npm",
     "trimTrailingWhitespace": true,
     "insertFinalNewline": true
 } 

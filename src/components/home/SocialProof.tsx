@@ -5,7 +5,7 @@ const testimonials = [
     id: "t1",
     name: "Nataly Grégoire",
     role: "Cliente",
-    content: "Wow ! Cette huile est un vrai délice dans l bouche. Elle ajoute un plus à mes recettes. J’adore, elle me ramène en voyage en Italie !",
+    content: "Wow ! Cette huile est un vrai délice dans l bouche. Elle ajoute un plus à mes recettes. J’adore, elle me ramène en voyage en Italie!",
     rating: 5
   },
 ]

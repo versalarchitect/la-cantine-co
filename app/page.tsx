@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components/home/HeroSection"
 import { AboutSection } from "@/components/home/AboutSection"
 import { ProductsSection } from "@/components/home/ProductsSection"
+import { ProductionProcessContainer } from "@/components/home/ProductionProcessContainer"
 import { VideoContainer } from "@/components/home/VideoContainer"
 import { ContactSection } from "@/components/home/ContactSection"
 import type { Metadata } from "next"
@@ -122,6 +123,7 @@ export default async function HomePage() {
         <HeroSection />
         <AboutSection />
         <ProductsSection />
+        <ProductionProcessContainer />
         <VideoContainer />
         <ContactSection />
       </main>

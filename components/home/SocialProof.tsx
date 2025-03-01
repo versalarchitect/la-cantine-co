@@ -9,6 +9,13 @@ const testimonials = [
     rating: 5
   },
   {
+    id: "t2",
+    name: "Clarine Lacombe",
+    role: "Cliente",
+    content: "Une véritable découverte ! L&apos;huile d&apos;olive italienne des Pouilles est d&apos;une qualité exceptionnelle. Son goût unique, à la fois fruité et délicatement épicé, sublime toutes mes recettes. Je suis ravi de pouvoir offrir à ma famille et à mes amis un produit authentique, directement venu des terres fertiles du sud de l&apos;Italie. La livraison est rapide et soignée. Je recommande vivement à tous les amateurs de cuisine de qualité !",
+    rating: 5
+  },
+  {
     id: "t3",
     name: "Julie Lemieux",
     role: "Cliente Fidèle",

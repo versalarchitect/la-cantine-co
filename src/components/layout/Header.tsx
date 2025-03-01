@@ -4,6 +4,32 @@ import Link from "next/link";
 import { usePathname } from "next/navigation"
 import { CartSheet } from "@/components/panier/CartSheet";
 import { CommandButton } from "@/components/ui/command-button";
+import { cn } from "@/lib/utils"
+import { motion } from "framer-motion"
+
+const navItems = [
+  { id: 'about', label: "Caractéristiques" },
+  { id: 'products', label: "Commander" },
+  { id: 'video', label: "Histoire" },
+  { id: 'contact', label: "FAQ" },
+]
+
+const navVariants = {
+  hidden: { y: -20, opacity: 0 },
+  visible: { 
+    y: 0, 
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      staggerChildren: 0.1
+    }
+  }
+}
+
+const itemVariants = {
+  hidden: { y: -20, opacity: 0 },
+  visible: { y: 0, opacity: 1 }
+}
 
 const scrollToSection = (sectionId: string) => {
   const element = document.getElementById(sectionId);
@@ -24,47 +50,54 @@ export function Header() {
   const isProductPage = pathname === "/huile-olive"
 
   return (
-    <header className="border-b fixed w-full top-0 bg-white/80 backdrop-blur-sm z-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <Link href="/" className="font-semibold text-xl">
+    <motion.header 
+      className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      initial="hidden"
+      animate="visible"
+      variants={navVariants}
+    >
+      <div className="container mx-auto flex h-16 items-center px-4">
+        <motion.div variants={itemVariants}>
+          <Link href="/" className="font-display text-xl font-medium tracking-tight text-foreground">
             La Cantine & Co
           </Link>
-          
-          {!isProductPage && (
-            <nav className="hidden md:flex items-center gap-8">
-              <button 
-                type="button"
-                onClick={() => scrollToSection('about')}
-                className="text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                About
-              </button>
-              <button 
-                type="button"
-                onClick={() => scrollToSection('products')}
-                className="text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                Products
-              </button>
-              <button 
-                type="button"
-                onClick={() => scrollToSection('contact')}
-                className="text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                Contact
-              </button>
+        </motion.div>
+        
+        {!isProductPage && (
+          <div className="ml-auto flex items-center gap-6">
+            <nav className="hidden md:flex md:gap-6">
+              {navItems.map((item) => (
+                <motion.div key={item.id} variants={itemVariants}>
+                  <button 
+                    type="button"
+                    onClick={() => scrollToSection(item.id)}
+                    className={cn(
+                      "text-sm font-medium transition-colors hover:text-primary",
+                      "text-muted-foreground"
+                    )}
+                  >
+                    {item.label}
+                  </button>
+                </motion.div>
+              ))}
             </nav>
-          )}
-
-          <div className="flex items-center gap-4">
-            {isProductPage && (
-              <CommandButton className="h-10 px-4 text-sm" />
-            )}
-            <CartSheet />
+            <motion.div variants={itemVariants}>
+              <CartSheet />
+            </motion.div>
           </div>
-        </div>
+        )}
+
+        {isProductPage && (
+          <div className="ml-auto flex items-center gap-4">
+            <motion.div variants={itemVariants}>
+              <CommandButton className="h-10 px-4 text-sm" />
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <CartSheet />
+            </motion.div>
+          </div>
+        )}
       </div>
-    </header>
+    </motion.header>
   );
 }

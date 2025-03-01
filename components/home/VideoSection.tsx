@@ -1,6 +1,7 @@
 "use client"
 
 import { Badge } from "@/components/ui/badge"
+import ReactPlayer from "react-player"
 
 export function VideoSection() {
   return (
@@ -33,16 +34,33 @@ export function VideoSection() {
           </div>
 
           <div className="aspect-video w-full rounded-lg overflow-hidden relative">
-            <iframe
-              src="https://www.youtube.com/embed/y7kyf0nahr0?modestbranding=1&color=white&rel=0"
-              title="Notre Histoire"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="absolute top-0 left-0 w-full h-full rounded-lg"
+            <ReactPlayer
+              url="/videos/video.mp4"
+              width="100%"
+              height="100%"
+              controls
+              playsinline
+              config={{
+                file: {
+                  attributes: {
+                    crossOrigin: "anonymous",
+                    controlsList: "nodownload",
+                  },
+                  tracks: [
+                    {
+                      kind: "captions",
+                      src: "/videos/captions.vtt",
+                      srcLang: "fr",
+                      default: true,
+                      label: "Français",
+                    },
+                  ],
+                },
+              }}
             />
           </div>
         </div>
       </div>
     </section>
   )
-} 
+}
