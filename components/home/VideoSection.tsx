@@ -1,9 +1,19 @@
 "use client"
 
 import { Badge } from "@/components/ui/badge"
-import ReactPlayer from "react-player"
+import dynamic from 'next/dynamic'
+import { useEffect, useState } from 'react'
+
+// Dynamically import ReactPlayer with no SSR
+const ReactPlayer = dynamic(() => import('react-player'), { ssr: false })
 
 export function VideoSection() {
+  const [isClient, setIsClient] = useState(false)
+  
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
   return (
     <section id="histoire" className="bg-background relative">
       {/* Subtle grid overlay */}
@@ -34,30 +44,32 @@ export function VideoSection() {
           </div>
 
           <div className="aspect-video w-full rounded-lg overflow-hidden relative">
-            <ReactPlayer
-              url="/videos/video.mp4"
-              width="100%"
-              height="100%"
-              controls
-              playsinline
-              config={{
-                file: {
-                  attributes: {
-                    crossOrigin: "anonymous",
-                    controlsList: "nodownload",
-                  },
-                  tracks: [
-                    {
-                      kind: "captions",
-                      src: "/videos/captions.vtt",
-                      srcLang: "fr",
-                      default: true,
-                      label: "Français",
+            {isClient && (
+              <ReactPlayer
+                url="/videos/video.MP4"
+                width="100%"
+                height="100%"
+                controls
+                playsinline
+                config={{
+                  file: {
+                    attributes: {
+                      crossOrigin: "anonymous",
+                      controlsList: "nodownload",
                     },
-                  ],
-                },
-              }}
-            />
+                    tracks: [
+                      {
+                        kind: "captions",
+                        src: "/videos/captions.vtt",
+                        srcLang: "fr",
+                        default: true,
+                        label: "Français",
+                      },
+                    ],
+                  },
+                }}
+              />
+            )}
           </div>
         </div>
       </div>

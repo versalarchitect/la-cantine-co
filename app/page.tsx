@@ -6,6 +6,7 @@ import { VideoContainer } from "@/components/home/VideoContainer"
 import { ContactSection } from "@/components/home/ContactSection"
 import type { Metadata } from "next"
 import { JsonLd } from "@/components/JsonLd"
+import { Suspense } from "react"
 
 const faqJsonLd = {
   '@context': 'https://schema.org',
@@ -124,7 +125,9 @@ export default async function HomePage() {
         <AboutSection />
         <ProductsSection />
         <ProductionProcessContainer />
-        <VideoContainer />
+        <Suspense fallback={null}>
+          <VideoContainer />
+        </Suspense>
         <ContactSection />
       </main>
     </>

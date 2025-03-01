@@ -21,8 +21,9 @@ export function Section({
 }: SectionProps) {
   const sectionRef = useRef<HTMLElement>(null)
 
+  // Only run this effect on the client side
   useEffect(() => {
-    if (process.env.NODE_ENV === "development") {
+    if (typeof window !== 'undefined' && process.env.NODE_ENV === "development") {
       const section = sectionRef.current
       if (section?.closest("section") !== section) {
         console.warn(
