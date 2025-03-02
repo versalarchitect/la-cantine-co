@@ -19,7 +19,8 @@ interface ProductDetailsProps {
 
 export function ProductDetails({ product }: ProductDetailsProps) {
   const handlePurchase = () => {
-    window.location.href = 'https://buy.stripe.com/9AQ2b07ez8OrdvaeUW'
+    window.location.href = 'https://buy.stripe.com/4gweXMeH10hVaiYcMP'
+    window.location.href = 'https://buy.stripe.com/4gweXMeH10hVaiYcMP'
   }
 
   return (
