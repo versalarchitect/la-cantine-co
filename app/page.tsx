@@ -43,13 +43,13 @@ const websiteJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'La Cantine & Co',
-  url: 'https://lacantine.co',
+  url: 'https://swww.cantineco.com/',
   description: "Découvrez notre huile d'olive exceptionnelle pressée à froid dans les Pouilles, Italie.",
   potentialAction: {
     '@type': 'SearchAction',
     target: {
       '@type': 'EntryPoint',
-      urlTemplate: 'https://lacantine.co/search?q={search_term_string}'
+      urlTemplate: 'https://www.cantineco.com/search?q={search_term_string}'
     },
     'query-input': 'required name=search_term_string'
   }
@@ -92,14 +92,12 @@ export const metadata: Metadata = {
     title: "La Cantine & Co | Huile d'Olive Premium des Pouilles",
     description: "Découvrez notre huile d'olive exceptionnelle pressée à froid dans les Pouilles, Italie.",
     images: ["/images/bouteille-social.jpg"],
-    creator: "@lacantine",
+    creator: "@cantineco",
   },
   alternates: {
-    canonical: "https://lacantine.co",
+    canonical: "https://www.cantineco.com/",
     languages: {
-      'fr-FR': 'https://lacantine.co',
-      'en-US': 'https://lacantine.co/en',
-      'it-IT': 'https://lacantine.co/it'
+      'fr-FR': 'https://www.cantineco.com/',
     }
   },
   robots: {

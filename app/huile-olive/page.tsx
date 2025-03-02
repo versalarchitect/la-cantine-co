@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     images: ["/images/bouteille-social.jpg"],
   },
   alternates: {
-    canonical: 'https://lacantine.co/huile-olive',
+    canonical: 'https://www.cantineco.com/huile-olive',
   },
 }
 
@@ -68,7 +68,7 @@ export default function ProductPage() {
       availability: product.inventory > 0 
         ? 'https://schema.org/InStock' 
         : 'https://schema.org/OutOfStock',
-      url: 'https://lacantine.co/huile-olive',
+      url: 'https://www.cantineco.com/huile-olive',
     },
     brand: {
       '@type': 'Brand',

@@ -49,7 +49,7 @@ export async function generateMetadata(
       images: [product.imageUrl || '/images/products/default.jpg'],
     },
     alternates: {
-      canonical: `https://lacantine.co/produits/${product.id}`,
+      canonical: `https://www.cantineco.com/produits/${product.id}`,
     },
   }
 }
@@ -63,7 +63,7 @@ function Breadcrumbs({ product }: { product: { name: string, category?: string }
         '@type': 'ListItem',
         position: 1,
         name: 'Accueil',
-        item: 'https://lacantine.co'
+        item: 'https://www.cantineco.com'
       },
       {
         '@type': 'ListItem',
@@ -120,7 +120,7 @@ export default async function ProductPage({ params }: Props) {
       availability: enrichedProduct.inventory && enrichedProduct.inventory > 0 
         ? 'https://schema.org/InStock' 
         : 'https://schema.org/OutOfStock',
-      url: `https://lacantine.co/produits/${enrichedProduct.id}`,
+      url: `https://www.cantineco.com/produits/${enrichedProduct.id}`,
     },
     brand: {
       '@type': 'Brand',

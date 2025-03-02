@@ -44,7 +44,7 @@ export async function generateMetadata(): Promise<Metadata> {
       images: [product.imageUrl || '/images/products/default.jpg'],
     },
     alternates: {
-      canonical: 'https://lacantine.co/huile-olive',
+      canonical: 'https://www.cantineco.com/huile-olive',
     },
   }
 }
@@ -58,7 +58,7 @@ function Breadcrumbs() {
         '@type': 'ListItem',
         position: 1,
         name: 'Accueil',
-        item: 'https://lacantine.co'
+        item: 'https://www.cantineco.com'
       },
       {
         '@type': 'ListItem',
@@ -102,7 +102,7 @@ export default async function ProductPage() {
       availability: product.inventory && product.inventory > 0 
         ? 'https://schema.org/InStock' 
         : 'https://schema.org/OutOfStock',
-      url: 'https://lacantine.co/huile-olive',
+      url: 'https://www.cantineco.com/huile-olive',
     },
     brand: {
       '@type': 'Brand',

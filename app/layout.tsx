@@ -36,21 +36,21 @@ const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'La Cantine & Co',
-  url: 'https://lacantine.co',
-  logo: 'https://lacantine.co/images/logo.png',
+  url: 'https://www.cantineco.com/',
+  logo: 'https://www.cantineco.com/images/logo.png',
   description: "Importateur d'huile d'olive premium des Pouilles, Italie",
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'FR',
   },
   sameAs: [
-    'https://facebook.com/lacantine',
-    'https://instagram.com/lacantine.co',
+    'https://facebook.com/lacantineco',
+    'https://instagram.com/lacantineco',
   ],
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer service',
-    email: 'contact@lacantine.co',
+    email: 'contact@cantineco.com',
     availableLanguage: ['French', 'English', 'Italian']
   }
 };
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.la-cantine-co.charlesjackson.dev'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.la-cansine-co.charlesjackson.dev'),
   openGraph: {
     type: "website",
     locale: "fr_FR",
@@ -100,8 +100,8 @@ export const metadata: Metadata = {
     title: "La Cantine & Co | Huile d'Olive Premium des Pouilles",
     description: "Découvrez notre huile d'olive exceptionnelle pressée à froid dans les Pouilles, Italie. Une acidité moyenne de 0,25% pour un équilibre parfait de saveurs fruitées aux notes d'amande.",
     images: ["/images/bouteille-social.jpg"],
-    creator: "@lacantine",
-    site: "@lacantine",
+    creator: "@lacantineco",
+    site: "@lacantineco",
   },
   robots: {
     index: true,
