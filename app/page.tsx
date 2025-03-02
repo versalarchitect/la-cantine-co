@@ -43,7 +43,7 @@ const websiteJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'La Cantine & Co',
-  url: 'https://swww.cantineco.com/',
+  surl: 'https://www.cantineco.com/',
   description: "Découvrez notre huile d'olive exceptionnelle pressée à froid dans les Pouilles, Italie.",
   potentialAction: {
     '@type': 'SearchAction',
