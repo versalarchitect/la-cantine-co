@@ -10,7 +10,6 @@ import { motion } from "framer-motion"
 const navItems = [
   { id: 'about', label: "Caractéristiques" },
   { id: 'products', label: "Commander" },
-  { id: 'video', label: "Histoire" },
   { id: 'contact', label: "FAQ" },
 ]
 

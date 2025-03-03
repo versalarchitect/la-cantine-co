@@ -2,11 +2,9 @@ import { HeroSection } from "@/components/home/HeroSection"
 import { AboutSection } from "@/components/home/AboutSection"
 import { ProductsSection } from "@/components/home/ProductsSection"
 import { ProductionProcessContainer } from "@/components/home/ProductionProcessContainer"
-import { VideoContainer } from "@/components/home/VideoContainer"
 import { ContactSection } from "@/components/home/ContactSection"
 import type { Metadata } from "next"
 import { JsonLd } from "@/components/JsonLd"
-import { Suspense } from "react"
 
 const faqJsonLd = {
   '@context': 'https://schema.org',
@@ -113,7 +111,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default async function HomePage() {
+export default function HomePage() {
   return (
     <>
       <JsonLd data={websiteJsonLd} />
@@ -123,9 +121,6 @@ export default async function HomePage() {
         <AboutSection />
         <ProductsSection />
         <ProductionProcessContainer />
-        <Suspense fallback={null}>
-          <VideoContainer />
-        </Suspense>
         <ContactSection />
       </main>
     </>
