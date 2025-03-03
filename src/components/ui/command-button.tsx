@@ -9,7 +9,7 @@ interface CommandButtonProps extends Omit<ButtonProps, 'asChild'> {
   className?: string
 }
 
-export function CommandButton({ className, href = "https://buy.stripe.com/6oE4j80Qb7Kn4YE28d", ...props }: CommandButtonProps) {
+export function CommandButton({ className, href = "https://buy.stripe.com/3cseXMbuPe8L76M9AE", ...props }: CommandButtonProps) {
   return (
     <Button
       asChild
