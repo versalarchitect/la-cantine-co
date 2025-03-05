@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { ShoppingBag, Shield, Truck, CreditCard } from "lucide-react"
 import Link from "next/link"
+import { OrderButton } from "@/components/ui/command-button"
 
 const guarantees = [
   {
@@ -61,17 +62,13 @@ export function PurchaseSection() {
         </div>
 
         <div className="text-left">
-        <Button 
-            asChild 
-            size="lg" 
+          <OrderButton 
+            label="Commander"
+            icon={<ShoppingBag className="h-6 w-6 ml-2" />}
             className="gap-2 bg-primary hover:bg-primary/90 text-primary-foreground
-                       font-display text-xl px-8 py-6 border-4 border-primary/20 
-                       hover:border-primary transition-all duration-300"
-          >
-            <Link href="/huile-olive" className="flex items-center">
-              Commander <ShoppingBag className="h-6 w-6 ml-2" />
-            </Link>
-          </Button>
+                     font-display text-xl px-8 py-6 border-4 border-primary/20 
+                     hover:border-primary transition-all duration-300"
+          />
         </div>
       </div>
     </section>

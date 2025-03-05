@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation"
 import { CartSheet } from "@/components/panier/CartSheet";
-import { CommandButton } from "@/components/ui/command-button";
+import { OrderButton } from "@/components/ui/command-button";
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
 
@@ -89,7 +89,10 @@ export function Header() {
         {isProductPage && (
           <div className="ml-auto flex items-center gap-4">
             <motion.div variants={itemVariants}>
-              <CommandButton className="h-10 px-4 text-sm" />
+              <OrderButton 
+                label="Commander maintenant"
+                className="h-10 px-4 text-sm" 
+              />
             </motion.div>
             <motion.div variants={itemVariants}>
               <CartSheet />

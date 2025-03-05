@@ -1,10 +1,10 @@
 "use client"
 
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Check } from "lucide-react"
 import { formatPrice } from "@/lib/utils"
+import { OrderButton } from "@/components/ui/command-button"
 
 interface Product {
   name: string;
@@ -101,12 +101,10 @@ export function ProductDetails({ product }: ProductDetailsProps) {
 
         <Card className="border-primary/20">
           <div className="p-6">
-            <Button
-              onClick={handlePurchase}
-              className="w-full h-12 text-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
-            >
-              Acheter maintenant
-            </Button>
+            <OrderButton 
+              label="Acheter maintenant"
+              className="w-full h-12 text-lg"
+            />
           </div>
         </Card>
 

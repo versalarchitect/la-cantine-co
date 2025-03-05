@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
 import { NavbarLogo } from "./NavbarLogo"
-import { Button } from "@/components/ui/button"
+import { OrderButton } from "@/components/ui/command-button"
 
 const navItems = [
     { href: "/", label: "Accueil" },
@@ -66,11 +66,10 @@ export function Navbar() {
                         ))}
                     </div>
                     <motion.div variants={itemVariants}>
-                        <Button asChild variant="default">
-                            <Link href="https://buy.stripe.com/00gg1QbuP9Sv76MaEK" target="_blank" rel="noopener noreferrer">
-                                Passer votre commande
-                            </Link>
-                        </Button>
+                        <OrderButton 
+                            label="Passer votre commande"
+                            className="h-10 px-4 text-sm"
+                        />
                     </motion.div>
                 </div>
             </div>

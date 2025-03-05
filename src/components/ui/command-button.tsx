@@ -4,12 +4,20 @@ import Link from "next/link"
 import { cn } from "@/lib/utils"
 import type { ButtonProps } from "@/components/ui/button"
 
-interface CommandButtonProps extends Omit<ButtonProps, 'asChild'> {
+interface OrderButtonProps extends Omit<ButtonProps, 'asChild'> {
   href?: string
   className?: string
+  label?: string
+  icon?: React.ReactNode
 }
 
-export function CommandButton({ className, href = "https://buy.stripe.com/00gg1QbuP9Sv76MaEK", ...props }: CommandButtonProps) {
+export function OrderButton({ 
+  className, 
+  href = "https://buy.stripe.com/00g9DsgP9d4H76M007", 
+  label = "Commander maintenant",
+  icon = <ShoppingBag className="h-6 w-6 ml-2" />,
+  ...props 
+}: OrderButtonProps) {
   return (
     <Button
       asChild
@@ -24,8 +32,11 @@ export function CommandButton({ className, href = "https://buy.stripe.com/00gg1Q
       {...props}
     >
       <Link href={href} target="_blank" rel="noopener noreferrer" className="flex items-center">
-        Commander maintenant <ShoppingBag className="h-6 w-6 ml-2" />
+        {label} {icon}
       </Link>
     </Button>
   )
-} 
+}
+
+// Export the CommandButton as an alias for backward compatibility
+export const CommandButton = OrderButton; 
