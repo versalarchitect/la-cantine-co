@@ -30,7 +30,7 @@ export function HeroSection() {
             <ScrollAnimation animation="slide" delay={0.4} className="relative mt-8">
               <h1 className="text-[4.5rem] md:text-[6rem] leading-[0.95] font-bold mb-0 tracking-tight">
                 Goûtez
-                <span className="block font-light text-primary/90">l&apos;Excellence</span>
+                <span className="block font-light text-primary/90">{"l'Excellence"}</span>
               
               </h1>
               <OliveIcon className="absolute -right-8 top-4 w-24 h-24 text-primary/15 rotate-[28deg] -z-10 transform-gpu hover:scale-105 transition-transform duration-700" />
@@ -38,14 +38,13 @@ export function HeroSection() {
 
             <ScrollAnimation animation="fade" delay={0.6}>
               <p className="mt-6 text-lg text-foreground/80">
-                Notre huile d&apos;olive est limpide, d&apos;une belle couleur dorée, avec un parfum fruité
-                et des notes d&apos;amande.
+                {"Notre huile d'olive est limpide, d'une belle couleur dorée, avec un parfum fruité et des notes d'amande."}
               </p>
             </ScrollAnimation>
 
             <ScrollAnimation animation="slide" delay={0.8}>
               <div className="mt-8 mb-10 pl-6 border-l border-primary/30">
-                <div className="text-lg font-medium">Huile d'olive extra vierge pressée à froid de qualité Coratin</div>
+                <div className="text-lg font-medium">{"Huile d'olive extra vierge pressée à froid de qualité Coratin"}</div>
                 <div className="text-sm text-foreground/60">Origine 100% italienne en provenance des Pouilles</div>
               </div>
             </ScrollAnimation>

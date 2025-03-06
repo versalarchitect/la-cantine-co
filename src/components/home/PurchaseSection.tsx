@@ -1,8 +1,6 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
 import { ShoppingBag, Shield, Truck, CreditCard } from "lucide-react"
-import Link from "next/link"
 import { OrderButton } from "@/components/ui/command-button"
 
 const guarantees = [

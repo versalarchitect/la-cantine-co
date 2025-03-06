@@ -18,11 +18,6 @@ interface ProductDetailsProps {
 }
 
 export function ProductDetails({ product }: ProductDetailsProps) {
-  const handlePurchase = () => {
-    window.location.href = 'https://buy.stripe.com/00gg1QbuP9Sv76MaEK'
-    window.location.href = 'https://buy.stripe.com/00gg1QbuP9Sv76MaEK'
-  }
-
   return (
     <div className="grid gap-8 lg:gap-16 lg:grid-cols-2">
       <Card className="overflow-hidden bg-card border-none transition-colors">

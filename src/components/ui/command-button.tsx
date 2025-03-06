@@ -13,7 +13,7 @@ interface OrderButtonProps extends Omit<ButtonProps, 'asChild'> {
 
 export function OrderButton({ 
   className, 
-  href = "https://buy.stripe.com/00g9DsgP9d4H76M007", 
+  href = "https://buy.stripe.com/7sI7vk9mHd4H62I7sA", 
   label = "Commander maintenant",
   icon = <ShoppingBag className="h-6 w-6 ml-2" />,
   ...props 
