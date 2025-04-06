@@ -44,7 +44,7 @@ export function HeroSection() {
 
             <ScrollAnimation animation="slide" delay={0.8}>
               <div className="mt-8 mb-10 pl-6 border-l border-primary/30">
-                <div className="text-lg font-medium">{"Huile d'olive extra vierge pressée à froid de qualité Coratin"}</div>
+                <div className="text-lg font-medium">{"Huile d'olive extra vierge pressée à froid de qualité Coratina"}</div>
                 <div className="text-sm text-foreground/60">Origine 100% italienne en provenance des Pouilles</div>
               </div>
             </ScrollAnimation>
